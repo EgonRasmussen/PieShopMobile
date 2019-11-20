@@ -2,6 +2,7 @@
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
+
 namespace BethanysPieShopMobile
 {
     public partial class App : Application
@@ -9,18 +10,8 @@ namespace BethanysPieShopMobile
         public App()
         {
             InitializeComponent();
-            //MainPage = new MainPage();
 
-            MainPage = new StackLayoutPage();
-            //MainPage = new LoginWithStackLayout();
-
-            //MainPage = new GridLayoutPage();
-            //MainPage = new NestedGridLayoutPage();
-            //MainPage = new LoginWithGridLayout();
-
-            //MainPage = new RelativeLayoutPage();
-            //MainPage = new ScrollViewPage();
-            //MainPage = new FlexLayoutPage();      // Problem: billederne vises ikke i Android, men virker i UWP!
+            MainPage = new NavigationPage(new MainPage());
         }
 
         protected override void OnStart()

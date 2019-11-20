@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="BethanysPieShopMobile.OtherViewPage" 
+             BackgroundImage="patternwide.png">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout>
+                <Label Text="Working with the Stepper" FontSize="Large" />
+
+                <Label x:Name="ValueLabel"></Label>
+
+                <Stepper Maximum="100"
+                         Increment="10"
+                         HorizontalOptions="Center"
+                         x:Name="MainStepper"
+                         ValueChanged="MainStepper_OnValueChanged" />
+
+
+                <Label Text="Working with the Switch" 
+                       FontSize="Large" />
+
+                <Switch IsToggled="True"></Switch>
+
+                <Label 
+                    Text="Working with the ActivityIndicator" 
+                    FontSize="Large" />
+
+                <ActivityIndicator 
+                    Color="Red" 
+                    IsRunning="True"></ActivityIndicator>
+
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

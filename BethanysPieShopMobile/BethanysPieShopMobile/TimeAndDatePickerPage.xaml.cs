@@ -10,9 +10,9 @@ using Xamarin.Forms.Xaml;
 namespace BethanysPieShopMobile
 {
 	[XamlCompilation(XamlCompilationOptions.Compile)]
-	public partial class LoginWithGridLayout : ContentPage
+	public partial class TimeAndDatePickerPage : ContentPage
 	{
-		public LoginWithGridLayout ()
+		public TimeAndDatePickerPage ()
 		{
 			InitializeComponent ();
 		}

@@ -1,15 +1,18 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
-             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             mc:Ignorable="d"
+             xmlns:local="clr-namespace:BethanysPieShopMobile"
              x:Class="BethanysPieShopMobile.MainPage">
-    <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
-    </ContentPage.Content>
+
+    <StackLayout>
+        <Label Text="Working with Views" FontSize="Large" />
+        <Button Text="Label" x:Name="LabelPageButton" Clicked="LabelButton_OnClicked"></Button>
+        <Button Text="Image" x:Name="ImageViewPageButton" Clicked="ImageViewPageButton_OnClicked"></Button>
+        <Button Text="Button" x:Name="ButtonPageButton" Clicked="ButtonPageButton_OnClicked"></Button>
+        <Button Text="Entry" x:Name="EntryPageButton" Clicked="EntryPageButton_OnClicked"></Button>
+        <Button Text="Slider" x:Name="SliderPageButton" Clicked="SliderPageButton_OnClicked"></Button>
+        <Button Text="TimePicker and DatePicker" x:Name="TimeAndDatePageButton" Clicked="TimeAndDatePageButton_OnClicked"></Button>
+        <Button Text="Other views" x:Name="OtherViewPageButton" Clicked="OtherViewPageButton_OnClicked"></Button>
+    </StackLayout>
+
 </ContentPage>

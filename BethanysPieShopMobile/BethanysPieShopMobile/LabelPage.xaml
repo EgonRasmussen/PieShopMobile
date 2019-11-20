@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="BethanysPieShopMobile.LabelPage"
+             BackgroundImage="patternwide.png">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout>
+
+                <Label Text="Working with the Label" FontSize="Large" />
+
+                <!--Regular label properties-->
+                <Label Text="Welcome to Bethany's Pie Shop" 
+                   TextDecorations="Underline" TextColor="Red" />
+                <Label Text="Welcome to Bethany's Pie Shop" 
+                   TextDecorations="Strikethrough" TextColor="#22cfa7" />
+                <Label Text="Welcome to Bethany's Pie Shop" 
+                   TextDecorations="Underline, Strikethrough" />
+
+                <!--Wrapping labels-->
+                <Label Text="Wrapping features" FontSize="Large" />
+
+                <Label LineBreakMode="WordWrap" >
+                    Cupcake chupa chups jelly-o powder candy canes sweet liquorice sweet macaroon. Pudding biscuit tart chocolate bar topping dragée marshmallow. Ice cream jelly chocolate cake sesame snaps sesame snaps. Caramels marshmallow tootsie roll sweet roll cake. Powder lemon drops halvah biscuit danish biscuit macaroon. Biscuit jelly lemon drops gummies cake fruitcake. Soufflé tootsie roll pudding cookie pastry jujubes icing. Chocolate cake jelly beans bear claw donut chocolate bar cookie toffee topping. Brownie gummies apple pie sesame snaps cake bonbon jelly-o. Chocolate cupcake marshmallow icing soufflé wafer soufflé. Pastry caramels danish macaroon chocolate cake tootsie roll chocolate bar toffee. Topping marshmallow lollipop wafer donut cookie cheesecake sesame snaps. Cheesecake caramels gummies wafer jelly beans chupa chups sweet.
+                </Label>
+
+                <Label LineBreakMode="HeadTruncation" >
+                    Cupcake chupa chups jelly-o powder candy canes sweet liquorice sweet macaroon. Pudding biscuit tart chocolate bar topping dragée marshmallow. Ice cream jelly chocolate cake sesame snaps sesame snaps. Caramels marshmallow tootsie roll sweet roll cake. Powder lemon drops halvah biscuit danish biscuit macaroon. Biscuit jelly lemon drops gummies cake fruitcake. Soufflé tootsie roll pudding cookie pastry jujubes icing. Chocolate cake jelly beans bear claw donut chocolate bar cookie toffee topping. Brownie gummies apple pie sesame snaps cake bonbon jelly-o. Chocolate cupcake marshmallow icing soufflé wafer soufflé. Pastry caramels danish macaroon chocolate cake tootsie roll chocolate bar toffee. Topping marshmallow lollipop wafer donut cookie cheesecake sesame snaps. Cheesecake caramels gummies wafer jelly beans chupa chups sweet.
+                </Label>
+
+                <Label LineBreakMode="MiddleTruncation" >
+                    Cupcake chupa chups jelly-o powder candy canes sweet liquorice sweet macaroon. Pudding biscuit tart chocolate bar topping dragée marshmallow. Ice cream jelly chocolate cake sesame snaps sesame snaps. Caramels marshmallow tootsie roll sweet roll cake. Powder lemon drops halvah biscuit danish biscuit macaroon. Biscuit jelly lemon drops gummies cake fruitcake. Soufflé tootsie roll pudding cookie pastry jujubes icing. Chocolate cake jelly beans bear claw donut chocolate bar cookie toffee topping. Brownie gummies apple pie sesame snaps cake bonbon jelly-o. Chocolate cupcake marshmallow icing soufflé wafer soufflé. Pastry caramels danish macaroon chocolate cake tootsie roll chocolate bar toffee. Topping marshmallow lollipop wafer donut cookie cheesecake sesame snaps. Cheesecake caramels gummies wafer jelly beans chupa chups sweet.
+                </Label>
+
+                <!--Number of lines-->
+                <Label Text="Displaying number of lines" FontSize="Large" />
+
+                <Label LineBreakMode="WordWrap" MaxLines="3" >
+                    Cupcake chupa chups jelly-o powder candy canes sweet liquorice sweet macaroon. Pudding biscuit tart chocolate bar topping dragée marshmallow. Ice cream jelly chocolate cake sesame snaps sesame snaps. Caramels marshmallow tootsie roll sweet roll cake. Powder lemon drops halvah biscuit danish biscuit macaroon. Biscuit jelly lemon drops gummies cake fruitcake. Soufflé tootsie roll pudding cookie pastry jujubes icing. Chocolate cake jelly beans bear claw donut chocolate bar cookie toffee topping. Brownie gummies apple pie sesame snaps cake bonbon jelly-o. Chocolate cupcake marshmallow icing soufflé wafer soufflé. Pastry caramels danish macaroon chocolate cake tootsie roll chocolate bar toffee. Topping marshmallow lollipop wafer donut cookie cheesecake sesame snaps. Cheesecake caramels gummies wafer jelly beans chupa chups sweet.
+                </Label>
+
+                <!--Text formatting-->
+                <Label Text="Text formatting" FontSize="Large" />
+
+                <Label LineBreakMode="WordWrap">
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span Text="Welcome " TextColor="#22cfa7" 
+                                  FontAttributes="Bold" />
+                            <Span Text="to " ></Span>
+                            <Span Text="Bethany's Pie Shop" 
+                                  FontAttributes="Italic" 
+                                  FontSize="Large" />
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+
+            </StackLayout>
+
+        </ScrollView>
+
+    </ContentPage.Content>
+</ContentPage>

@@ -11,31 +11,31 @@
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Update="FlexLayoutPage.xaml">
+    <EmbeddedResource Update="App.xaml">
       <Generator>MSBuild:Compile</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="GridLayoutPage.xaml">
+    <EmbeddedResource Update="ButtonPage.xaml">
       <Generator>MSBuild:Compile</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="LoginWithGridLayout.xaml">
+    <EmbeddedResource Update="EntryPage.xaml">
       <Generator>MSBuild:Compile</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="LoginWithStackLayout.xaml">
+    <EmbeddedResource Update="ImageViewPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="LabelPage.xaml">
       <Generator>MSBuild:Compile</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="MainPage.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
-    <EmbeddedResource Update="NestedGridLayoutPage.xaml">
       <Generator>MSBuild:Compile</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="RelativeLayoutPage.xaml">
+    <EmbeddedResource Update="OtherViewPage.xaml">
       <Generator>MSBuild:Compile</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="ScrollViewPage.xaml">
+    <EmbeddedResource Update="SliderPage.xaml">
       <Generator>MSBuild:Compile</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="StackLayoutPage.xaml">
+    <EmbeddedResource Update="TimeAndDatePickerPage.xaml">
       <Generator>MSBuild:Compile</Generator>
     </EmbeddedResource>
   </ItemGroup>

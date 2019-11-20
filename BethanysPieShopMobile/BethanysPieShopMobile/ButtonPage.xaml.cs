@@ -10,11 +10,16 @@ using Xamarin.Forms.Xaml;
 namespace BethanysPieShopMobile
 {
 	[XamlCompilation(XamlCompilationOptions.Compile)]
-	public partial class RelativeLayoutPage : ContentPage
+	public partial class ButtonPage : ContentPage
 	{
-		public RelativeLayoutPage ()
+		public ButtonPage ()
 		{
 			InitializeComponent ();
 		}
+
+	    private void LoadButton_OnClicked(object sender, EventArgs e)
+	    {
+	        LoadButton.Text = "I've been clicked";
+	    }
 	}
 }
