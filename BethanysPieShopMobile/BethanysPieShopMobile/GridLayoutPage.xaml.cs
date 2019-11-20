@@ -9,12 +9,12 @@ using Xamarin.Forms.Xaml;
 
 namespace BethanysPieShopMobile
 {
-    [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class MainPage : ContentPage
-    {
-        public MainPage()
-        {
-            InitializeComponent();
-        }
-    }
+	[XamlCompilation(XamlCompilationOptions.Compile)]
+	public partial class GridLayoutPage : ContentPage
+	{
+		public GridLayoutPage ()
+		{
+			InitializeComponent ();
+		}
+	}
 }

@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="BethanysPieShopMobile.NestedGridLayoutPage">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100"></RowDefinition>
+            <RowDefinition Height="2*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Label Text="Welcome to Bethany's Pie Shop" Grid.ColumnSpan="3" HorizontalOptions="Center" VerticalOptions="Center"></Label>
+        <BoxView Color="Green"  Grid.Row="1" Grid.Column="0" />
+        <BoxView Color="Red"  Grid.Row="1" Grid.Column="1" />
+        <BoxView Color="Blue"  Grid.Row="1" Grid.Column="2" />
+        <Grid Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <BoxView Color="AntiqueWhite" Grid.Row="0" Grid.Column="0" />
+            <BoxView Color="Aqua" Grid.Row="0" Grid.Column="1" />
+            <BoxView Color="DarkOrange" Grid.Row="1" Grid.Column="0" />
+            <BoxView Color="LawnGreen" Grid.Row="1" Grid.Column="1" />
+        </Grid>
+        <BoxView Color="Violet"  Grid.Row="2" Grid.Column="2" />
+    </Grid>
+
+
+</ContentPage>

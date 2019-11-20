@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="BethanysPieShopMobile.RelativeLayoutPage">
+    <RelativeLayout>
+
+        <BoxView Color="Red" 
+            RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToView, ElementName=GreenBoxView,
+                                Property=X, Factor=1, Constant=-30}" 
+            RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToView, ElementName=GreenBoxView,
+                                Property=Y, Factor=1, Constant=-30}"
+            RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent,
+                                    Property=Width, Factor=.25}"
+            RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent,
+                                    Property=Height, Factor=.2}"/>
+
+        <BoxView Color="Green" x:Name="GreenBoxView"
+                 RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent,
+                                        Property=Width, Factor=0.6}"
+                 RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent,
+                                        Property=Height, Factor=.5}"
+                 WidthRequest="150" />
+
+        <Image Source="bethanylogo.png" 
+                 RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=.5, Constant=100}"
+                 RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=.2}"
+                 RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=.2}"
+                 RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=.2}"/>
+    </RelativeLayout>
+</ContentPage>

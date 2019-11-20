@@ -7,17 +7,14 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace BethanysPieShopMobile.Helpers
+namespace BethanysPieShopMobile
 {
 	[XamlCompilation(XamlCompilationOptions.Compile)]
-	public partial class HomePageView : ContentPage
+	public partial class FlexLayoutPage : ContentPage
 	{
-		public HomePageView ()
+		public FlexLayoutPage ()
 		{
 			InitializeComponent ();
-
-		    //this.Navigation.PopAsync();
-		    //this.Navigation.PopToRootAsync();
 		}
 	}
 }

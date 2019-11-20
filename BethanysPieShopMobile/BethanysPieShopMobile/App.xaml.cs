@@ -9,15 +9,18 @@ namespace BethanysPieShopMobile
         public App()
         {
             InitializeComponent();
+            //MainPage = new MainPage();
 
-            MainPage = new MainPage();
-            //MainPage = new ContentPageView();
-            //MainPage = new NavigationPage(new NavigationPageView());
-            //MainPage = new TabbedPageView();
-            //MainPage = new MasterDetailPageView();
-            //MainPage = new CarouselPageView();
-            //MainPage = new ModalPageView();
-            //MainPage = new PopupView();
+            MainPage = new StackLayoutPage();
+            //MainPage = new LoginWithStackLayout();
+
+            //MainPage = new GridLayoutPage();
+            //MainPage = new NestedGridLayoutPage();
+            //MainPage = new LoginWithGridLayout();
+
+            //MainPage = new RelativeLayoutPage();
+            //MainPage = new ScrollViewPage();
+            //MainPage = new FlexLayoutPage();      // Problem: billederne vises ikke i Android, men virker i UWP!
         }
 
         protected override void OnStart()

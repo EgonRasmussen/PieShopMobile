@@ -7,12 +7,12 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace BethanysPieShopMobile.Helpers
+namespace BethanysPieShopMobile
 {
 	[XamlCompilation(XamlCompilationOptions.Compile)]
-	public partial class BasketView : ContentPage
+	public partial class NestedGridLayoutPage : ContentPage
 	{
-		public BasketView ()
+		public NestedGridLayoutPage ()
 		{
 			InitializeComponent ();
 		}

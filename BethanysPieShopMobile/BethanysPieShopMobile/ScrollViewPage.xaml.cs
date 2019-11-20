@@ -7,12 +7,12 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace BethanysPieShopMobile.Helpers
+namespace BethanysPieShopMobile
 {
 	[XamlCompilation(XamlCompilationOptions.Compile)]
-	public partial class ContactusView : ContentPage
+	public partial class ScrollViewPage : ContentPage
 	{
-		public ContactusView ()
+		public ScrollViewPage ()
 		{
 			InitializeComponent ();
 		}
