@@ -130,4 +130,28 @@
       <Name>BethanysPieShopMobile</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\applepie.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\applepiesmall.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\basket.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\bethanylogo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\contact.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\home.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\patternwide.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\pie.png" />
+  </ItemGroup>
 </Project>
