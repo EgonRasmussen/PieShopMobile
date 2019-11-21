@@ -11,12 +11,12 @@ namespace BethanysPieShopMobile
         {
             InitializeComponent();
 
-            //MainPage = new LoginView();
+            MainPage = new LoginView();
             //MainPage = new RegisterView();
             //MainPage = new ContactView();
             //MainPage = new SettingsView();
             //MainPage = new WebPageView();
-            MainPage = new PieDetailView();
+            //MainPage = new PieDetailView();
         }
 
         protected override void OnStart()
