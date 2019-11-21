@@ -10,7 +10,7 @@
                HorizontalTextAlignment="Center" 
                VerticalTextAlignment="Center"></Label>
 
-        <WebView Source="https://www.snowball.be" 
+        <WebView Source="https://www.eucsyd.dk" 
                  HeightRequest="500"
                  WidthRequest="500"></WebView>
     </StackLayout>
