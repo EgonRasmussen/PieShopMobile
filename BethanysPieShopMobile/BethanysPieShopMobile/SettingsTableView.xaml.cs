@@ -10,17 +10,11 @@ using Xamarin.Forms.Xaml;
 namespace BethanysPieShopMobile
 {
 	[XamlCompilation(XamlCompilationOptions.Compile)]
-	public partial class LoginView : ContentPage
+	public partial class SettingsTableView : ContentPage
 	{
-		public LoginView ()
+		public SettingsTableView ()
 		{
 			InitializeComponent ();
 		}
-
-        private async void LoginButton_OnClicked(object sender, EventArgs e)
-        {
-            Navigation.InsertPageBefore(new MainView(), this);
-            await Navigation.PopAsync();
-        }
-    }
+	}
 }

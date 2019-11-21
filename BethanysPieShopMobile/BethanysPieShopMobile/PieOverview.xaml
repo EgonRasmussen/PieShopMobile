@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="BethanysPieShopMobile.PieOverview">
+    <Grid>
+        <ListView VerticalOptions="FillAndExpand" 
+                  x:Name="PiesListView" 
+                  CachingStrategy="RecycleElement" 
+                  ItemSelected="PiesListView_OnItemSelected" 
+                  IsPullToRefreshEnabled="True" >
+            
+            <ListView.ItemsSource>
+                <x:Array Type="{x:Type x:String}">
+                    <x:String>Apple Pie</x:String>
+                    <x:String>Strawberry Cheese Cake</x:String>
+                    <x:String>Strawberry Pie</x:String>
+                    <x:String>Rhubarb Pie</x:String>
+                    <x:String>Blueberry Cheese Cake</x:String>
+                    <x:String>Cheese Cake</x:String>
+                    <x:String>Cherry Pie</x:String>
+                    <x:String>Christmas Apple Pie</x:String>
+                    <x:String>Cranberry Pie</x:String>
+                    <x:String>Peach Pie</x:String>
+                    <x:String>Pumpkin Pie</x:String>
+                </x:Array>
+            </ListView.ItemsSource>
+            
+            <!--<ListView.ItemTemplate>
+                <DataTemplate>
+                    <TextCell Text="{Binding PieName}" Detail="{Binding Price}"></TextCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>-->
+            
+            <!--<ListView.ItemTemplate>
+                <DataTemplate>
+                    <ImageCell Text="{Binding PieName}" Detail="{Binding Price}" ImageSource="{Binding ImageUrl}"
+                               TextColor="#22cfa7"></ImageCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>-->
+
+            <!--<ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Grid Margin="5" BackgroundColor="White" RowSpacing="2">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*"></RowDefinition>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="50"></ColumnDefinition>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+                                <ColumnDefinition Width="50"></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <Image Grid.Row="0" HeightRequest="100" WidthRequest="100" VerticalOptions="Start" Margin="2,2,1,2" Source="{Binding ImageUrl}"></Image>
+                            <Label Grid.Row="0" Grid.Column="1" VerticalOptions="Start" Text="{Binding PieName}" Margin="3" ></Label>
+                            <Label Grid.Row="0" Grid.Column="2" Margin="3" Text="{Binding Price}" FontAttributes="Bold" HorizontalTextAlignment="End"></Label>
+                        </Grid>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>-->
+            
+        </ListView>
+    </Grid>
+</ContentPage>

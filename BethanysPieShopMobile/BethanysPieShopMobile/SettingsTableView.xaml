@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="BethanysPieShopMobile.SettingsTableView">
+    <ContentPage.Content>
+        <TableView Intent="Form">
+            <TableRoot>
+                <TableSection Title="App settings">
+                    <SwitchCell Text="Allow deliveries on Sunday"></SwitchCell>
+                    <SwitchCell Text="Get promo emails"></SwitchCell>
+                </TableSection>
+            </TableRoot>
+        </TableView>
+    </ContentPage.Content>
+</ContentPage>
+
+
+
+<!--<ContentPage.Content>
+    <TableView Intent="Form">
+        <TableRoot>
+            <TableSection Title="App settings">
+                <ViewCell>
+                    <ViewCell.View>
+                        <StackLayout Orientation="Horizontal" Padding="13, 0">
+                            <Label Text="Select your language" VerticalOptions="Center"></Label>
+                            <Picker x:Name="LanguagePickerFromXaml"  Title="Select your language for this app">
+                                <Picker.ItemsSource>
+                                    <x:Array Type="{x:Type x:String}">
+                                        <x:String>English</x:String>
+                                        <x:String>Dutch</x:String>
+                                        <x:String>French</x:String>
+                                        <x:String>German</x:String>
+                                    </x:Array>
+                                </Picker.ItemsSource>
+                            </Picker>
+                        </StackLayout>
+                    </ViewCell.View>
+                </ViewCell>
+                <SwitchCell Text="Enable orders in the app" />
+            </TableSection>
+        </TableRoot>
+    </TableView>
+</ContentPage.Content>-->
