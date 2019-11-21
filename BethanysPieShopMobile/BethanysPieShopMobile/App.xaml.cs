@@ -11,7 +11,7 @@ namespace BethanysPieShopMobile
             InitializeComponent();
             //MainPage = new MainPage();
 
-            MainPage = new StackLayoutPage();
+            //MainPage = new StackLayoutPage();
             //MainPage = new LoginWithStackLayout();
 
             //MainPage = new GridLayoutPage();
@@ -20,7 +20,7 @@ namespace BethanysPieShopMobile
 
             //MainPage = new RelativeLayoutPage();
             //MainPage = new ScrollViewPage();
-            //MainPage = new FlexLayoutPage();      // Problem: billederne vises ikke i Android, men virker i UWP!
+            MainPage = new FlexLayoutPage();     
         }
 
         protected override void OnStart()
