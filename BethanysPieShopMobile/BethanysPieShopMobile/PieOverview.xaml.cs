@@ -102,7 +102,7 @@ namespace BethanysPieShopMobile
                 }
             };
 
-            //PiesListView.ItemsSource = pies;
+            PiesListView.ItemsSource = pies;
         }
 
         private void ReloadData()
