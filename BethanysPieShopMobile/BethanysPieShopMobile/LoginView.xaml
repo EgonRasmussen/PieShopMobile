@@ -3,7 +3,27 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="BethanysPieShopMobile.LoginView"
              BackgroundImage="patternwide.png">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Color x:Key="BethanysGreenColor">#22cfa7</Color>
+
+            <Style x:Key="GreenButtonStyle" TargetType="Button">
+                <Setter Property="HorizontalOptions" Value="Center" />
+                <Setter Property="VerticalOptions" Value="Start" />
+                <Setter Property="BackgroundColor" Value="#33cfa7" />
+                <Setter Property="TextColor" Value="White" />
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
     <Grid Margin="5">
+        <!--<Grid.Resources>
+            <ResourceDictionary>
+                <Color x:Key="BethanysGreenColor">Red</Color>
+            </ResourceDictionary>
+        </Grid.Resources>-->
+
         <Grid.RowDefinitions>
             <RowDefinition Height="200"></RowDefinition>
             <RowDefinition Height="100"></RowDefinition>
@@ -27,7 +47,8 @@
                Grid.ColumnSpan="2" 
                FontSize="Large" 
                HorizontalTextAlignment="Center" 
-               VerticalTextAlignment="Center"></Label>
+               VerticalTextAlignment="Center"
+               TextColor="{StaticResource BethanysGreenColor}"></Label>        
         <Label Text="User name" 
                Grid.Row="2" 
                Grid.Column="0" 
@@ -58,5 +79,12 @@
                 TextColor="White"
                 Clicked="LoginButton_OnClicked"
                 ></Button>
+        <!--<Button x:Name="LoginButton"
+                Text="Login"               
+                Grid.Row="4" 
+                Grid.ColumnSpan="2"           
+                Clicked="LoginButton_OnClicked"
+                Style="{StaticResource GreenButtonStyle}"
+                ></Button>-->
     </Grid>
 </ContentPage>

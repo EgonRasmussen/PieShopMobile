@@ -7,8 +7,8 @@
         <!--<ResourceDictionary>
 
             <ResourceDictionary.MergedDictionaries>
-                <bethanysPieShopMobile:ColorDictionary />
-                --><!-- Add more resource dictionaries here --><!--
+                --><!--<bethanysPieShopMobile:ColorDictionary />-->
+                 <!--Add more resource dictionaries here--><!-- 
             </ResourceDictionary.MergedDictionaries>
 
             <Style x:Key="RegularButtonStyle" TargetType="Button">
@@ -53,7 +53,7 @@
                 <Setter Property="VerticalOptions" Value="Center"></Setter>
             </Style>
 
-            --><!-- Implicit style for all regular labels in the application --><!--
+             --><!--Implicit style for all regular labels in the application--><!-- 
             <Style TargetType="Label">
                 <Setter Property="FontSize" Value="Medium"></Setter>
                 <Setter Property="HorizontalOptions" Value="Start"></Setter>
@@ -61,7 +61,7 @@
                 <Setter Property="TextColor" Value="DarkGray"></Setter>
             </Style>
 
-            --><!-- Style inheritance --><!--
+             --><!--Style inheritance--><!-- 
             <Style x:Key="BaseLabelStyle" TargetType="Label">
                 <Setter Property="HorizontalOptions" Value="Start"></Setter>
                 <Setter Property="VerticalOptions" Value="Center"></Setter>
