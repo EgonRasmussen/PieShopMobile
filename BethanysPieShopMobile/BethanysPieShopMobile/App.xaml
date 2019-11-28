@@ -6,8 +6,7 @@
     <Application.Resources>
 
         <ResourceDictionary>
-            <!--<Color x:Key="BethanysGreenColor">#22cfa7</Color>-->
-        
+       
             <ResourceDictionary.MergedDictionaries>
                 <bethanysPieShopMobile:ColorDictionary />
             </ResourceDictionary.MergedDictionaries>
