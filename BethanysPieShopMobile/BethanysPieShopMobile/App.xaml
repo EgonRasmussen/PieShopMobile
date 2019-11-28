@@ -1,15 +1,16 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Application xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:bethanysPieShopMobile="clr-namespace:BethanysPieShopMobile"
              x:Class="BethanysPieShopMobile.App">
     <Application.Resources>
 
         <ResourceDictionary>
-            <Color x:Key="BethanysGreenColor">#22cfa7</Color>
+            <!--<Color x:Key="BethanysGreenColor">#22cfa7</Color>-->
         
-            <!--<ResourceDictionary.MergedDictionaries>
+            <ResourceDictionary.MergedDictionaries>
                 <bethanysPieShopMobile:ColorDictionary />
-            </ResourceDictionary.MergedDictionaries>-->
+            </ResourceDictionary.MergedDictionaries>
 
             <Style x:Key="RegularButtonStyle" TargetType="Button">
                 <Setter Property="HorizontalOptions" Value="Center"></Setter>
