@@ -6,24 +6,18 @@
 
     <ContentPage.Resources>
         <ResourceDictionary>
-            <Color x:Key="BethanysGreenColor">#22cfa7</Color>
+            <!--<Color x:Key="BethanysGreenColor">#22cfa7</Color>-->
 
-            <Style x:Key="GreenButtonStyle" TargetType="Button">
+            <!--<Style x:Key="GreenButtonStyle" TargetType="Button">
                 <Setter Property="HorizontalOptions" Value="Center" />
                 <Setter Property="VerticalOptions" Value="Start" />
                 <Setter Property="BackgroundColor" Value="#33cfa7" />
                 <Setter Property="TextColor" Value="White" />
-            </Style>
+            </Style>-->
         </ResourceDictionary>
     </ContentPage.Resources>
 
     <Grid Margin="5">
-        <!--<Grid.Resources>
-            <ResourceDictionary>
-                <Color x:Key="BethanysGreenColor">Red</Color>
-            </ResourceDictionary>
-        </Grid.Resources>-->
-
         <Grid.RowDefinitions>
             <RowDefinition Height="200"></RowDefinition>
             <RowDefinition Height="100"></RowDefinition>
@@ -69,22 +63,12 @@
                Placeholder="Enter your password" 
                HorizontalOptions="StartAndExpand" 
                VerticalOptions="Center"></Entry>
+
         <Button x:Name="LoginButton"
-                Text="Login" 
-                HorizontalOptions="Center" 
-                VerticalOptions="Start" 
-                BackgroundColor="#22cfa7" 
-                Grid.Row="4" 
-                Grid.ColumnSpan="2" 
-                TextColor="White"
-                Clicked="LoginButton_OnClicked"
-                ></Button>
-        <!--<Button x:Name="LoginButton"
                 Text="Login"               
                 Grid.Row="4" 
                 Grid.ColumnSpan="2"           
                 Clicked="LoginButton_OnClicked"
-                Style="{StaticResource GreenButtonStyle}"
-                ></Button>-->
+                Style="{StaticResource RegularButtonStyle}"></Button>
     </Grid>
 </ContentPage>

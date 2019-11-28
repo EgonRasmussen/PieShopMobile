@@ -4,12 +4,12 @@
              x:Class="BethanysPieShopMobile.App">
     <Application.Resources>
 
-        <!--<ResourceDictionary>
-
-            <ResourceDictionary.MergedDictionaries>
-                --><!--<bethanysPieShopMobile:ColorDictionary />-->
-                 <!--Add more resource dictionaries here--><!-- 
-            </ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary>
+            <Color x:Key="BethanysGreenColor">#22cfa7</Color>
+        
+            <!--<ResourceDictionary.MergedDictionaries>
+                <bethanysPieShopMobile:ColorDictionary />
+            </ResourceDictionary.MergedDictionaries>-->
 
             <Style x:Key="RegularButtonStyle" TargetType="Button">
                 <Setter Property="HorizontalOptions" Value="Center"></Setter>
@@ -20,7 +20,7 @@
 
 
 
-            <Style x:Key="TitleLabelStyle" TargetType="Label">
+            <!--<Style x:Key="TitleLabelStyle" TargetType="Label">
                 <Setter Property="FontSize" Value="Large"></Setter>
                 <Setter Property="FontAttributes" Value="Bold"></Setter>
                 <Setter Property="HorizontalOptions" Value="Center"></Setter>
@@ -81,8 +81,8 @@
             <Style x:Key="LargeLabelStyle" TargetType="Label" 
                    BasedOn="{StaticResource BaseLabelStyle}">
                 <Setter Property="FontSize" Value="Large"></Setter>
-            </Style>
-        </ResourceDictionary>-->
+            </Style>-->
+        </ResourceDictionary>
 
     </Application.Resources>
 </Application>
