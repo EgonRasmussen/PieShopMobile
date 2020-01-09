@@ -5,7 +5,7 @@
              x:Class="BethanysPieShopMobile.MainPage">
 
     <StackLayout>
-        <Label Text="Working with Views" FontSize="Large" />
+        <Label Text="Working with Views!" FontSize="Large" />
         <Button Text="Label" x:Name="LabelPageButton" Clicked="LabelButton_OnClicked"></Button>
         <Button Text="Image" x:Name="ImageViewPageButton" Clicked="ImageViewPageButton_OnClicked"></Button>
         <Button Text="Button" x:Name="ButtonPageButton" Clicked="ButtonPageButton_OnClicked"></Button>
