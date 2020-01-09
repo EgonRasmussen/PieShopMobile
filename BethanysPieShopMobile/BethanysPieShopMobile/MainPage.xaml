@@ -8,6 +8,6 @@
              x:Class="BethanysPieShopMobile.MainPage">
     
     <StackLayout>
-        <local:CustomEntry Text="Welcome to Bethany's Pie Shop"></local:CustomEntry>
+        <local:CustomEntry Text="Welcome to Bethany's Pie Shop!"></local:CustomEntry>
     </StackLayout>
 </ContentPage>
