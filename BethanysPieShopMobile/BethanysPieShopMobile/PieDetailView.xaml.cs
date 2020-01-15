@@ -1,9 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using BethanysPieShopMobile.Model;
+﻿using BethanysPieShopMobile.Model;
+using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -12,12 +8,16 @@ namespace BethanysPieShopMobile
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class PieDetailView : ContentPage
 	{
+		public Pie Pie { get; set; } 
+
 		public PieDetailView (Pie p)
 		{
 			InitializeComponent ();
 
 			//BindData(p);
-			this.BindingContext = p;
+
+			Pie = p;
+			this.BindingContext = Pie;
 		}
 
 	    //private void BindData(Pie pie)
