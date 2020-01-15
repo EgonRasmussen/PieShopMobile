@@ -22,7 +22,8 @@
                Grid.ColumnSpan="2" 
                FontSize="Large" 
                HorizontalTextAlignment="Center" 
-               VerticalTextAlignment="Center"></Label>
+               VerticalTextAlignment="Center"
+               Text="{Binding PieName}"/>
         <Image x:Name="PieImage" 
                Grid.Row="1" 
                Grid.ColumnSpan="2" 
@@ -30,18 +31,22 @@
                WidthRequest="200" 
                HeightRequest="200" 
                HorizontalOptions="Center" 
-               VerticalOptions="Center"></Image>
+               VerticalOptions="Center"
+               Source="{Binding ImageUrl}"/>
         <Label x:Name="PriceLabel" 
                FontAttributes="Bold" 
-               Grid.Row="2"></Label>
+               Grid.Row="2"
+               Text="{Binding Price, StringFormat='{0:C'}"/>
         <Label x:Name="InStockLabel" 
                Grid.Row="2" 
                Grid.Column="1" 
-               HorizontalOptions="End"></Label>
+               HorizontalOptions="End"
+               Text="{Binding InStock}"/>
         <Label x:Name="DescriptionLabel" 
                FontSize="Small" 
                Grid.Row="3" 
-               Grid.ColumnSpan="2"></Label>
+               Grid.ColumnSpan="2"
+               Text="{Binding Description}"/>
         <Button x:Name="AddToBasketButton" 
                 Clicked="AddToBasketButton_OnClicked" 
                 Text="Add to basket" 

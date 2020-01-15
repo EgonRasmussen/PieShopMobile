@@ -8,7 +8,7 @@ namespace BethanysPieShopMobile.Model
         private int _id;
         private string _pieName;
         private string _description;
-        private double _price;
+        private decimal _price;
         private string _imageUrl;
         private bool _inStock;
 
@@ -42,7 +42,7 @@ namespace BethanysPieShopMobile.Model
             }
         }
 
-        public double Price
+        public decimal Price
         {
             get => _price;
             set
