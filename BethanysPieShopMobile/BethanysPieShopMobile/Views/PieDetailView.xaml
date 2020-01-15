@@ -1,18 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:converters="clr-namespace:BethanysPieShopMobile.Converters"
              x:Class="BethanysPieShopMobile.PieDetailView"
              Padding="5"
              BackgroundImage="patternwide.png">
-
-    <ContentPage.Resources>
-        <ResourceDictionary>
-            <converters:BoolToTextConverter x:Key="LocalBoolToTextConverter"/>
-        </ResourceDictionary>
-    </ContentPage.Resources>
-    
-    <Grid x:Name="MainGrid">
+    <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="50"></RowDefinition>
             <RowDefinition Height="150"></RowDefinition>
@@ -44,12 +36,12 @@
         <Label x:Name="PriceLabel" 
                FontAttributes="Bold" 
                Grid.Row="2"
-               Text="{Binding Price, StringFormat='{0:c}'}"/>
+               Text="{Binding Price, StringFormat='{0:C'}"/>
         <Label x:Name="InStockLabel" 
                Grid.Row="2" 
                Grid.Column="1" 
                HorizontalOptions="End"
-               Text="{Binding InStock, Converter={StaticResource LocalBoolToTextConverter}}"/>
+               Text="{Binding InStock}"/>
         <Label x:Name="DescriptionLabel" 
                FontSize="Small" 
                Grid.Row="3" 
