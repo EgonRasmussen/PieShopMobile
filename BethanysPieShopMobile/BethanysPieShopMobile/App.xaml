@@ -20,7 +20,7 @@
 
 
 
-            <!--<Style x:Key="TitleLabelStyle" TargetType="Label">
+            <Style x:Key="TitleLabelStyle" TargetType="Label">
                 <Setter Property="FontSize" Value="Large"></Setter>
                 <Setter Property="FontAttributes" Value="Bold"></Setter>
                 <Setter Property="HorizontalOptions" Value="Center"></Setter>
@@ -53,7 +53,7 @@
                 <Setter Property="VerticalOptions" Value="Center"></Setter>
             </Style>
 
-             --><!--Implicit style for all regular labels in the application--><!-- 
+             <!--Implicit style for all regular labels in the application--> 
             <Style TargetType="Label">
                 <Setter Property="FontSize" Value="Medium"></Setter>
                 <Setter Property="HorizontalOptions" Value="Start"></Setter>
@@ -61,7 +61,7 @@
                 <Setter Property="TextColor" Value="DarkGray"></Setter>
             </Style>
 
-             --><!--Style inheritance--><!-- 
+             <!--Style inheritance--> 
             <Style x:Key="BaseLabelStyle" TargetType="Label">
                 <Setter Property="HorizontalOptions" Value="Start"></Setter>
                 <Setter Property="VerticalOptions" Value="Center"></Setter>
@@ -81,7 +81,7 @@
             <Style x:Key="LargeLabelStyle" TargetType="Label" 
                    BasedOn="{StaticResource BaseLabelStyle}">
                 <Setter Property="FontSize" Value="Large"></Setter>
-            </Style>-->
+            </Style>
         </ResourceDictionary>
 
     </Application.Resources>
