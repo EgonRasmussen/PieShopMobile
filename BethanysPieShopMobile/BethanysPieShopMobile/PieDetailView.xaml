@@ -36,7 +36,7 @@
         <Label x:Name="PriceLabel" 
                FontAttributes="Bold" 
                Grid.Row="2"
-               Text="{Binding Price, StringFormat='{0:C'}"/>
+               Text="{Binding Price, StringFormat='{0:C}'}"/>
         <Label x:Name="InStockLabel" 
                Grid.Row="2" 
                Grid.Column="1" 
