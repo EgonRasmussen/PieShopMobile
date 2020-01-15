@@ -11,31 +11,31 @@
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Update="Views\ContactView.xaml">
+    <EmbeddedResource Update="ContactView.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\LoginView.xaml">
+    <EmbeddedResource Update="LoginView.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\MainView.xaml">
+    <EmbeddedResource Update="MainView.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\MasterPageNavigationListView.xaml">
+    <EmbeddedResource Update="MasterPageNavigationListView.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\PieDetailView.xaml">
+    <EmbeddedResource Update="PieDetailView.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\PieOverview.xaml">
+    <EmbeddedResource Update="PieOverview.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\RegisterView.xaml">
+    <EmbeddedResource Update="RegisterView.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\SettingsTableView.xaml">
+    <EmbeddedResource Update="SettingsTableView.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\SettingsView.xaml">
+    <EmbeddedResource Update="SettingsView.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>
