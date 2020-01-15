@@ -1,16 +1,82 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.ComponentModel;
+using System.Runtime.CompilerServices;
 
 namespace BethanysPieShopMobile.Model
 {
-    public class Pie
+    public class Pie : INotifyPropertyChanged
     {
-        public int Id { get; set; }
-        public string PieName { get; set; }
-        public string Description { get; set; }
-        public double Price { get; set; }
-        public string ImageUrl { get; set; }
-        public bool InStock { get; set; }
+        private int _id;
+        private string _pieName;
+        private string _description;
+        private double _price;
+        private string _imageUrl;
+        private bool _inStock;
+
+        public int Id
+        {
+            get => _id;
+            set
+            {
+                _id = value;
+                RaisePropertyChanged();
+            }
+        }
+
+        public string PieName
+        {
+            get => _pieName;
+            set
+            {
+                _pieName = value;
+                RaisePropertyChanged();
+            }
+        }
+
+        public string Description
+        {
+            get => _description;
+            set
+            {
+                _description = value;
+                RaisePropertyChanged();
+            }
+        }
+
+        public double Price
+        {
+            get => _price;
+            set
+            {
+                _price = value;
+                RaisePropertyChanged();
+            }
+        }
+
+        public string ImageUrl
+        {
+            get => _imageUrl;
+            set
+            {
+                _imageUrl = value;
+                RaisePropertyChanged();
+            }
+        }
+
+        public bool InStock
+        {
+            get => _inStock;
+            set
+            {
+                _inStock = value;
+                RaisePropertyChanged();
+            }
+        }
+
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        public void RaisePropertyChanged([CallerMemberName] string propertyName = "")
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
     }
 }
