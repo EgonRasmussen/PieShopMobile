@@ -6,24 +6,25 @@
 
     <ContentPage.Resources>
         <ResourceDictionary>
-            <Color x:Key="BethanysGreenColor">#22cfa7</Color>
+            <Color x:Key="BethanysGreenColor">#22cfa7</Color>           <!--Opgave 10.1.1--><!--
 
-            <Style x:Key="GreenButtonStyle" TargetType="Button">
+            <Style x:Key="GreenButtonStyle" TargetType="Button">        --><!--Opgave 10.2.1--><!--
                 <Setter Property="HorizontalOptions" Value="Center" />
                 <Setter Property="VerticalOptions" Value="Start" />
                 <Setter Property="BackgroundColor" Value="#33cfa7" />
                 <Setter Property="TextColor" Value="White" />
-            </Style>
+            </Style>-->
         </ResourceDictionary>
     </ContentPage.Resources>
 
     <Grid Margin="5">
+                            <!--Opgave 10.1.3-->
         <!--<Grid.Resources>
             <ResourceDictionary>
                 <Color x:Key="BethanysGreenColor">Red</Color>
             </ResourceDictionary>
-        </Grid.Resources>-->
-
+        </Grid.Resources>-->     
+        
         <Grid.RowDefinitions>
             <RowDefinition Height="200"></RowDefinition>
             <RowDefinition Height="100"></RowDefinition>
@@ -48,7 +49,7 @@
                FontSize="Large" 
                HorizontalTextAlignment="Center" 
                VerticalTextAlignment="Center"
-               TextColor="{StaticResource BethanysGreenColor}"></Label>        
+               TextColor="{StaticResource BethanysGreenColor}"></Label>  <!--Opgave 10.1.2-->
         <Label Text="User name" 
                Grid.Row="2" 
                Grid.Column="0" 
@@ -77,14 +78,23 @@
                 Grid.Row="4" 
                 Grid.ColumnSpan="2" 
                 TextColor="White"
-                Clicked="LoginButton_OnClicked"
-                ></Button>
+                Clicked="LoginButton_OnClicked" />
+
+                <!--Opgave 10.2.2-->
         <!--<Button x:Name="LoginButton"
                 Text="Login"               
                 Grid.Row="4" 
                 Grid.ColumnSpan="2"           
                 Clicked="LoginButton_OnClicked"
-                Style="{StaticResource GreenButtonStyle}"
-                ></Button>-->
+                Style="{StaticResource GreenButtonStyle}" />-->
+
+
+        <!--Opgave 10.2.6-->     
+        <!--<Button x:Name="LoginButton"
+                Text="Login"               
+                Grid.Row="4" 
+                Grid.ColumnSpan="2"           
+                Clicked="LoginButton_OnClicked"
+                Style="{StaticResource GreenButtonStyle}" />-->
     </Grid>
 </ContentPage>
