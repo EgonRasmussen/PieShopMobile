@@ -4,19 +4,6 @@
              x:Class="BethanysPieShopMobile.LoginView"
              BackgroundImage="patternwide.png">
 
-    <ContentPage.Resources>
-        <ResourceDictionary>
-            <!--<Color x:Key="BethanysGreenColor">#22cfa7</Color>-->
-
-            <!--<Style x:Key="GreenButtonStyle" TargetType="Button">
-                <Setter Property="HorizontalOptions" Value="Center" />
-                <Setter Property="VerticalOptions" Value="Start" />
-                <Setter Property="BackgroundColor" Value="#33cfa7" />
-                <Setter Property="TextColor" Value="White" />
-            </Style>-->
-        </ResourceDictionary>
-    </ContentPage.Resources>
-
     <Grid Margin="5">
         <Grid.RowDefinitions>
             <RowDefinition Height="200"></RowDefinition>
@@ -29,12 +16,11 @@
             <ColumnDefinition Width="4*"></ColumnDefinition>
             <ColumnDefinition Width="6*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
+
         <Image Source="bethanylogo.png" 
                Grid.Row="0" 
                Grid.ColumnSpan="2" 
-               Margin="10" 
-               HorizontalOptions="Center" 
-               VerticalOptions="Center"></Image>
+               Style="{Binding LogoImageStyle}"/>
         <Label Text="Welcome to Bethany's Pie Shop" 
                Grid.Row="1" 
                Grid.Column="0" 
@@ -42,17 +28,13 @@
                FontSize="Large" 
                HorizontalTextAlignment="Center" 
                VerticalTextAlignment="Center"
-               TextColor="{StaticResource BethanysGreenColor}"></Label>        
+               TextColor="{StaticResource BethanysGreenColor}"/>
         <Label Text="User name" 
                Grid.Row="2" 
-               Grid.Column="0" 
-               FontSize="Medium" 
-               VerticalOptions="Center"></Label>
+               Grid.Column="0" />
         <Label Text="Password" 
                Grid.Row="3" 
-               Grid.Column="0" 
-               FontSize="Medium" 
-               VerticalOptions="Center"></Label>
+               Grid.Column="0"/>
         <Entry Grid.Row="2" 
                Grid.Column="1" 
                Placeholder="Enter your user name" 
@@ -61,14 +43,12 @@
         <Entry Grid.Row="3" 
                Grid.Column="1" 
                Placeholder="Enter your password" 
-               HorizontalOptions="StartAndExpand" 
-               VerticalOptions="Center"></Entry>
-
+               Style="{Binding LoginEntry}" />
         <Button x:Name="LoginButton"
                 Text="Login"               
                 Grid.Row="4" 
                 Grid.ColumnSpan="2"           
                 Clicked="LoginButton_OnClicked"
-                Style="{StaticResource RegularButtonStyle}"></Button>
+                Style="{StaticResource RegularButtonStyle}"/>
     </Grid>
 </ContentPage>
