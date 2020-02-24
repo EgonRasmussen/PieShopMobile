@@ -9,7 +9,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BethanysPieShopMobile.Andro
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BethanysPieShopMobile.iOS", "BethanysPieShopMobile\BethanysPieShopMobile.iOS\BethanysPieShopMobile.iOS.csproj", "{105F862D-DDB5-48C5-9D0F-9EA72B2E6774}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BethanysPieShopMobile", "BethanysPieShopMobile\BethanysPieShopMobile\BethanysPieShopMobile.csproj", "{D79E3AF5-302C-4BEC-958D-70946980420F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BethanysPieShopMobile", "BethanysPieShopMobile\BethanysPieShopMobile\BethanysPieShopMobile.csproj", "{D79E3AF5-302C-4BEC-958D-70946980420F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{8B81A0BA-186C-4CD4-94E1-918E808EE6B1}"
+	ProjectSection(SolutionItems) = preProject
+		README.md = README.md
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
