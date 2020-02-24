@@ -1,21 +1,45 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using BethanysPieShopMobile.Model;
 using System.ComponentModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Xamarin.Forms;
 
 namespace BethanysPieShopMobile
 {
-    // Learn more about making custom code visible in the Xamarin.Forms previewer
-    // by visiting https://aka.ms/xamarinforms-previewer
     [DesignTimeVisible(false)]
     public partial class MainPage : ContentPage
     {
+        public Pie CherryPie { get; set; }  // #4
+
         public MainPage()
         {
             InitializeComponent();
+
+            // Oprettelse af Pie-objekt i koden
+            Pie pie = new Pie
+            {
+                Id = 1,
+                PieName = "Cherry Pie",
+                Price = 20
+            };
+
+            #region #1 BINDING IN CODE
+            Binding pieNameBinding = new Binding();
+            pieNameBinding.Source = pie;
+            pieNameBinding.Path = "PieName";
+            NameEntry.SetBinding(Entry.TextProperty, pieNameBinding);
+
+            Binding priceBinding = new Binding();
+            priceBinding.Source = pie;
+            priceBinding.Path = "Price";
+            PriceEntry.SetBinding(Entry.TextProperty, priceBinding);
+            #endregion
+
+            #region #3 BINDING VIA BINDINGCONTEXT
+            //MainGrid.BindingContext = pie;
+            #endregion
+
+            #region #4 BINDING PAGE TIL PROPERTY
+            //this.BindingContext = CherryPie;
+            #endregion
         }
     }
 }
