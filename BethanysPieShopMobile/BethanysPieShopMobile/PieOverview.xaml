@@ -25,11 +25,11 @@
                 </x:Array>
             </ListView.ItemsSource>
             
-            <!--<ListView.ItemTemplate>
+            <ListView.ItemTemplate>
                 <DataTemplate>
                     <TextCell Text="{Binding PieName}" Detail="{Binding Price}"></TextCell>
                 </DataTemplate>
-            </ListView.ItemTemplate>-->
+            </ListView.ItemTemplate>
             
             <!--<ListView.ItemTemplate>
                 <DataTemplate>

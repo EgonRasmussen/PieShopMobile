@@ -105,6 +105,12 @@ namespace BethanysPieShopMobile
             PiesListView.ItemsSource = pies;
         }
 
+        private async void PiesListView_OnItemSelected(object sender, SelectedItemChangedEventArgs e)
+        {
+            var selectedPie = e.SelectedItem as Pie;
+            await Navigation.PushAsync(new PieDetailView(selectedPie));
+        }
+
         private void ReloadData()
         {
             var pies = new List<Pie>
@@ -151,12 +157,6 @@ namespace BethanysPieShopMobile
                 }
             };
             PiesListView.ItemsSource = pies;
-        }
-
-        private async void PiesListView_OnItemSelected(object sender, SelectedItemChangedEventArgs e)
-        {
-            var selectedPie = e.SelectedItem as Pie;
-            await Navigation.PushAsync(new PieDetailView(selectedPie));
         }
     }
 }
