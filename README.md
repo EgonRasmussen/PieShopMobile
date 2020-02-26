@@ -1,19 +1,25 @@
-# 3. Binding Modes & ChangeNotification
-Først skal `Pie` klassen opdateres med **NotifyPropertyChange**:
+# 4. Binding to a Single Object
 
+### Oprettelse af Detail Screen
+
+Vi begynder med en ny og udvidet udgave af Pie-klassen:
 ```c#
 public class Pie : INotifyPropertyChanged
 {
     private int _id;
     private string _pieName;
+    private string _description;
     private double _price;
+    private string _imageUrl;
+    private bool _inStock;
+    private DateTime _availableFromDate;
 
     public int Id
     {
         get => _id;
         set
         {
-            _id = value;
+            _id = value; 
             RaisePropertyChanged();
         }
     }
@@ -28,6 +34,16 @@ public class Pie : INotifyPropertyChanged
         }
     }
 
+    public string Description
+    {
+        get => _description;
+        set
+        {
+            _description = value;
+            RaisePropertyChanged();
+        }
+    }
+
     public double Price
     {
         get => _price;
@@ -38,6 +54,38 @@ public class Pie : INotifyPropertyChanged
         }
     }
 
+    public string ImageUrl
+    {
+        get => _imageUrl;
+        set
+        {
+            _imageUrl = value; 
+            RaisePropertyChanged();
+        }
+    }
+
+    public bool InStock
+    {
+        get => _inStock;
+        set
+        {
+            _inStock = value;
+            RaisePropertyChanged();
+        }
+    }
+
+    public DateTime AvailableFromDate
+    {
+        get => _availableFromDate;
+        set
+        {
+            _availableFromDate = value; 
+            RaisePropertyChanged();
+        }
+    }
+
+    public List<string> Ingredients { get; set; }
+
     public event PropertyChangedEventHandler PropertyChanged;
 
     public void RaisePropertyChanged([CallerMemberName] string propertyName = "")
@@ -47,18 +95,341 @@ public class Pie : INotifyPropertyChanged
 }
 ```
 
-### Forsøg med Mode
-Ændre startup tilbage til MainPage. 
-I MainPage sættes binding til `PieName`til `Mode=OneWay` og binding til `Price`sættes til `TwoWay`.
+### #1 Opret Detail Page
+Opret en ny ContentPage kaldet **PieDetailPage**:
+```xml
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="BethanysPieShopStockApp.PieDetailPage"
+             Padding="5"
+             BackgroundImage="patternwide.png">
 
-Desuden laves en eventhandler til Button, som sætter prisen op på CherryPie:
+    <ScrollView>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50"></RowDefinition>
+                <RowDefinition Height="150"></RowDefinition>
+                <RowDefinition Height="50"></RowDefinition>
+                <RowDefinition Height="50"></RowDefinition>
+                <RowDefinition Height="200"></RowDefinition>
+                <RowDefinition Height="50"></RowDefinition>
+                <RowDefinition Height="50"></RowDefinition>
+                <RowDefinition Height="50"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width=".4*"></ColumnDefinition>
+                <ColumnDefinition Width=".6*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Label x:Name="TitleLabel" 
+               Text="Edit pie"
+               Grid.Row="0" 
+               Grid.Column="0" 
+               Grid.ColumnSpan="2" 
+               Style="{StaticResource TitleLabelStyle}"></Label>
+            <Image x:Name="PieImage" 
+               Grid.Column="0"
+               Grid.Row="1" 
+               Grid.ColumnSpan="2"
+               Source="{Binding ImageUrl}"
+               Margin="10" 
+               WidthRequest="200" 
+               HeightRequest="200" 
+               HorizontalOptions="Center" 
+               VerticalOptions="Center"></Image>
+            <Label Text="Pie name" 
+               Grid.Row="2" 
+               Grid.Column="0"
+               Style="{StaticResource SmallLabelStyle}"></Label>
+            <Entry Grid.Row="2"
+               Grid.Column="1"
+               Text="{Binding PieName, Mode=TwoWay}" 
+               Style="{StaticResource RegularEntry}"></Entry>
+            <Label Text="Price" 
+               Grid.Row="3" 
+               Grid.Column="0"
+               Style="{StaticResource SmallLabelStyle}"></Label>
+            <Entry Grid.Row="3"
+               Grid.Column="1"
+               Text="{Binding Price, Mode=TwoWay}" 
+               Style="{StaticResource RegularEntry}"></Entry>
+            <Label Text="Description" 
+               Grid.Row="4" 
+               Grid.Column="0"
+               Style="{StaticResource SmallLabelStyle}"></Label>
+            <Editor Grid.Row="4"
+               Grid.Column="1"
+               Text="{Binding Description, Mode=TwoWay}" 
+               Style="{StaticResource RegularEditorStyle}"></Editor>
+            <Label Text="In stock?" 
+               Grid.Row="5" 
+               Grid.Column="0"
+               Style="{StaticResource SmallLabelStyle}"></Label>
+            <Switch Grid.Row="5"
+               Grid.Column="1"
+               IsToggled="{Binding InStock, Mode=TwoWay}"></Switch>
+            <Label Text="Available date" 
+               Grid.Row="6" 
+               Grid.Column="0"
+               Style="{StaticResource SmallLabelStyle}"></Label>
+            <DatePicker Grid.Row="6"
+                Grid.Column="1"
+                Date="{Binding AvailableFromDate, Mode=TwoWay}"></DatePicker>
+            <Button x:Name="SavePieButton" 
+                Clicked="SavePieButton_OnClicked" 
+                Text="Save Pie" 
+                Style="{StaticResource RegularButtonStyle}" 
+                Grid.Row="7" 
+                Grid.Column="0"
+                Grid.ColumnSpan="2"></Button>
+        </Grid>
+    </ScrollView>
+</ContentPage>
+```
+
+Desuden oprettes et objekt af Pie, som bindes til PieDetailPage og tilsidst laves en eventhandler der åbner en alert pop-up.
 ```c#
-private void Button_Clicked(object sender, System.EventArgs e)
+#region #1 BINDING SINGLE OBJECT
+Pie = new Pie
 {
-    CherryPie.Price++;
+    Id = 1,
+    Description =
+        "Gingerbread jujubes donut. Gummies cake halvah. Jujubes candy canes pudding cupcake ice cream bonbon chocolate bar. Pudding apple pie carrot cake lollipop. Caramels sugar plum muffin croissant cake dragée carrot cake jelly-o cotton candy. Jelly beans chocolate pie bear claw donut sesame snaps. Carrot cake tart sweet gummies. Lollipop cotton candy muffin marshmallow chocolate bar danish. Tart donut fruitcake. Toffee candy danish chocolate danish toffee chocolate bar. Ice cream chocolate cake gingerbread. Brownie tootsie roll cotton candy cookie bear claw cheesecake cupcake lollipop apple pie.",
+    ImageUrl = "https://gillcleerenpluralsight.blob.core.windows.net/files/applepiesmall.jpg",
+    InStock = true,
+    AvailableFromDate = new DateTime(2018, 12, 1),
+    PieName = "Apple pie",
+    Price = 20.95
+};
+this.BindingContext = Pie;
+#endregion
+```
+Der tilføjes nogle Styles til App.xaml og billedet patternwide.png kopiereres til Android og iOS projekterne.
+
+I App.xaml.cs sættes startupPage til PieDetailPage.
+
+Sæt et breakpoint i eventhandleren, prøv at ændre nogle properties og undersøg om ændringerne er blevet overført til Pie-objektet.
+
+---
+
+### #2 Binding to Properties
+For at kunne demonstrere Binding via Properties, skal der tilføjes et ekstra niveau i klasse-hierakiet.
+Opret klassen PieDetailViewModel:
+```c#
+public class PieDetailViewModel
+{
+    public Pie Pie { get; set; }
+    public string UserName { get; set; }
 }
 ```
 
-1. Test forøgelse af Price
-2. Test med et breakpoint i Button-eventhandler at hvis man ændrer `Price` i Entry, opdateres det fra Destination tilbage til Source (pga. TwoWay binding).
-3. Test også at hvis man ændrer `PieName` og kører til breakpoint, så er navnet ikke ændret (pga. OneWay binding).
+Nu skal Pie-objektet flyttes ind i PieDetailViewModel-objektet, således at der opstår et ekstra niveau i bindingen:
+```c#
+#region #2 BINDING TO PROPERTIES
+PieDetailViewModel = new PieDetailViewModel()
+{
+    Pie = new Pie
+    {
+        Id = 1,
+        Description =
+            "Gingerbread jujubes donut. Gummies cake halvah. Jujubes candy canes pudding cupcake ice cream bonbon chocolate bar. Pudding apple pie carrot cake lollipop. Caramels sugar plum muffin croissant cake dragée carrot cake jelly-o cotton candy. Jelly beans chocolate pie bear claw donut sesame snaps. Carrot cake tart sweet gummies. Lollipop cotton candy muffin marshmallow chocolate bar danish. Tart donut fruitcake. Toffee candy danish chocolate danish toffee chocolate bar. Ice cream chocolate cake gingerbread. Brownie tootsie roll cotton candy cookie bear claw cheesecake cupcake lollipop apple pie.",
+        ImageUrl = "https://gillcleerenpluralsight.blob.core.windows.net/files/applepiesmall.jpg",
+        InStock = true,
+        AvailableFromDate = new DateTime(2018, 12, 1),
+        PieName = "Apple pie",
+        Price = 20.95
+    },
+    UserName = "Bethany"
+};
+this.BindingContext = this;
+#endregion
+```
+
+Nu er det nødvendigt at navigere igennem to ekstra properties i alle bindings:
+```xml
+<!--#2 Binding to Properties-->
+<ScrollView>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"></RowDefinition>
+            <RowDefinition Height="150"></RowDefinition>
+            <RowDefinition Height="50"></RowDefinition>
+            <RowDefinition Height="50"></RowDefinition>
+            <RowDefinition Height="200"></RowDefinition>
+            <RowDefinition Height="50"></RowDefinition>
+            <RowDefinition Height="50"></RowDefinition>
+            <RowDefinition Height="50"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width=".4*"></ColumnDefinition>
+            <ColumnDefinition Width=".6*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Label x:Name="TitleLabel" 
+            Text="Edit pie"
+            Grid.Row="0" 
+            Grid.Column="0" 
+            Grid.ColumnSpan="2" 
+            Style="{StaticResource TitleLabelStyle}"></Label>
+        <Image x:Name="PieImage" 
+            Grid.Column="0"
+            Grid.Row="1" 
+            Grid.ColumnSpan="2"
+            Source="{Binding PieDetailViewModel.Pie.ImageUrl}"
+            Margin="10" 
+            WidthRequest="200" 
+            HeightRequest="200" 
+            HorizontalOptions="Center" 
+            VerticalOptions="Center"></Image>
+        <Label Text="Pie name" 
+            Grid.Row="2" 
+            Grid.Column="0"
+            Style="{StaticResource SmallLabelStyle}"></Label>
+        <Entry Grid.Row="2"
+            Grid.Column="1"
+            Text="{Binding PieDetailViewModel.Pie.PieName, Mode=TwoWay}" 
+            Style="{StaticResource RegularEntry}"></Entry>
+        <Label Text="Price" 
+            Grid.Row="3" 
+            Grid.Column="0"
+            Style="{StaticResource SmallLabelStyle}"></Label>
+        <Entry Grid.Row="3"
+            Grid.Column="1"
+            Text="{Binding PieDetailViewModel.Pie.Price, Mode=TwoWay}" 
+            Style="{StaticResource RegularEntry}"></Entry>
+        <Label Text="Description" 
+            Grid.Row="4" 
+            Grid.Column="0"
+            Style="{StaticResource SmallLabelStyle}"></Label>
+        <Editor Grid.Row="4"
+            Grid.Column="1"
+            Text="{Binding PieDetailViewModel.Pie.Description, Mode=TwoWay}" 
+            Style="{StaticResource RegularEditorStyle}"></Editor>
+        <Label Text="In stock?" 
+            Grid.Row="5" 
+            Grid.Column="0"
+            Style="{StaticResource SmallLabelStyle}"></Label>
+        <Switch Grid.Row="5"
+            Grid.Column="1"
+            IsToggled="{Binding PieDetailViewModel.Pie.InStock, Mode=TwoWay}"></Switch>
+        <Label Text="Available date" 
+            Grid.Row="6" 
+            Grid.Column="0"
+            Style="{StaticResource SmallLabelStyle}"></Label>
+        <DatePicker Grid.Row="6"
+            Grid.Column="1"
+            Date="{Binding PieDetailViewModel.Pie.AvailableFromDate, Mode=TwoWay}"></DatePicker>
+        <Button x:Name="SavePieButton" 
+            Clicked="SavePieButton_OnClicked" 
+            Text="Save Pie" 
+            Style="{StaticResource RegularButtonStyle}" 
+            Grid.Row="7" 
+            Grid.Column="0"
+            Grid.ColumnSpan="2"></Button>
+    </Grid>
+</ScrollView>
+```
+
+---
+
+### #3 Using an indexer
+For at demonstrere brugen af indexer i binding, skal vi have en List af Pies:
+```c#
+#region #3 BINDING TO COLLECTION
+Pies = new List<Pie>
+{
+    new Pie
+    {
+        PieName = "Apple Pie",
+        Price = 12.95,
+        Description =
+            "Icing carrot cake jelly-o cheesecake. Sweet roll marzipan marshmallow toffee brownie brownie candy tootsie roll. Chocolate cake gingerbread tootsie roll oat cake pie chocolate bar cookie dragée brownie. Lollipop cotton candy cake bear claw oat cake. Dragée candy canes dessert tart. Marzipan dragée gummies lollipop jujubes chocolate bar candy canes. Icing gingerbread chupa chups cotton candy cookie sweet icing bonbon gummies. Gummies lollipop brownie biscuit danish chocolate cake. Danish powder cookie macaroon chocolate donut tart. Carrot cake dragée croissant lemon drops liquorice lemon drops cookie lollipop toffee. Carrot cake carrot cake liquorice sugar plum topping bonbon pie muffin jujubes. Jelly pastry wafer tart caramels bear claw. Tiramisu tart pie cake danish lemon drops. Brownie cupcake dragée gummies.",
+        ImageUrl = "https://gillcleerenpluralsight.blob.core.windows.net/files/applepie.jpg",
+        AvailableFromDate = new DateTime(2018, 12, 1),
+        InStock = true,
+    },
+    new Pie
+    {
+        PieName = "Strawberry Cheese Cake", Price = 18.95, Description =
+            "Icing carrot cake jelly-o cheesecake. Sweet roll marzipan marshmallow toffee brownie brownie candy tootsie roll. Chocolate cake gingerbread tootsie roll oat cake pie chocolate bar cookie dragée brownie. Lollipop cotton candy cake bear claw oat cake. Dragée candy canes dessert tart. Marzipan dragée gummies lollipop jujubes chocolate bar candy canes. Icing gingerbread chupa chups cotton candy cookie sweet icing bonbon gummies. Gummies lollipop brownie biscuit danish chocolate cake. Danish powder cookie macaroon chocolate donut tart. Carrot cake dragée croissant lemon drops liquorice lemon drops cookie lollipop toffee. Carrot cake carrot cake liquorice sugar plum topping bonbon pie muffin jujubes. Jelly pastry wafer tart caramels bear claw. Tiramisu tart pie cake danish lemon drops. Brownie cupcake dragée gummies.",
+        ImageUrl = "https://gillcleerenpluralsight.blob.core.windows.net/files/strawberrycheesecake.jpg",
+        AvailableFromDate = new DateTime(2018, 12, 1),
+        InStock = false,
+    },
+    new Pie
+    {
+        PieName = "Strawberry Pie", Price = 15.95,
+        Description =
+            "Icing carrot cake jelly-o cheesecake. Sweet roll marzipan marshmallow toffee brownie brownie candy tootsie roll. Chocolate cake gingerbread tootsie roll oat cake pie chocolate bar cookie dragée brownie. Lollipop cotton candy cake bear claw oat cake. Dragée candy canes dessert tart. Marzipan dragée gummies lollipop jujubes chocolate bar candy canes. Icing gingerbread chupa chups cotton candy cookie sweet icing bonbon gummies. Gummies lollipop brownie biscuit danish chocolate cake. Danish powder cookie macaroon chocolate donut tart. Carrot cake dragée croissant lemon drops liquorice lemon drops cookie lollipop toffee. Carrot cake carrot cake liquorice sugar plum topping bonbon pie muffin jujubes. Jelly pastry wafer tart caramels bear claw. Tiramisu tart pie cake danish lemon drops. Brownie cupcake dragée gummies.",
+        ImageUrl = "https://gillcleerenpluralsight.blob.core.windows.net/files/strawberrypie.jpg",
+        InStock = true,
+    },
+    new Pie
+    {
+        PieName = "Rhubarb Pie", Price = 15.95, Description =
+            "Icing carrot cake jelly-o cheesecake. Sweet roll marzipan marshmallow toffee brownie brownie candy tootsie roll. Chocolate cake gingerbread tootsie roll oat cake pie chocolate bar cookie dragée brownie. Lollipop cotton candy cake bear claw oat cake. Dragée candy canes dessert tart. Marzipan dragée gummies lollipop jujubes chocolate bar candy canes. Icing gingerbread chupa chups cotton candy cookie sweet icing bonbon gummies. Gummies lollipop brownie biscuit danish chocolate cake. Danish powder cookie macaroon chocolate donut tart. Carrot cake dragée croissant lemon drops liquorice lemon drops cookie lollipop toffee. Carrot cake carrot cake liquorice sugar plum topping bonbon pie muffin jujubes. Jelly pastry wafer tart caramels bear claw. Tiramisu tart pie cake danish lemon drops. Brownie cupcake dragée gummies.",
+        ImageUrl = "https://gillcleerenpluralsight.blob.core.windows.net/files/rhubarbpie.jpg",
+        InStock = true,
+    },
+    new Pie
+    {
+        PieName = "Blueberry Cheese Cake", Price = 18.95,
+        Description =
+            "Icing carrot cake jelly-o cheesecake. Sweet roll marzipan marshmallow toffee brownie brownie candy tootsie roll. Chocolate cake gingerbread tootsie roll oat cake pie chocolate bar cookie dragée brownie. Lollipop cotton candy cake bear claw oat cake. Dragée candy canes dessert tart. Marzipan dragée gummies lollipop jujubes chocolate bar candy canes. Icing gingerbread chupa chups cotton candy cookie sweet icing bonbon gummies. Gummies lollipop brownie biscuit danish chocolate cake. Danish powder cookie macaroon chocolate donut tart. Carrot cake dragée croissant lemon drops liquorice lemon drops cookie lollipop toffee. Carrot cake carrot cake liquorice sugar plum topping bonbon pie muffin jujubes. Jelly pastry wafer tart caramels bear claw. Tiramisu tart pie cake danish lemon drops. Brownie cupcake dragée gummies.",
+        ImageUrl = "https://gillcleerenpluralsight.blob.core.windows.net/files/blueberrycheesecake.jpg",
+        InStock = true,
+    },
+    new Pie
+    {
+        PieName = "Cheese Cake", Price = 18.95, Description =
+            "Icing carrot cake jelly-o cheesecake. Sweet roll marzipan marshmallow toffee brownie brownie candy tootsie roll. Chocolate cake gingerbread tootsie roll oat cake pie chocolate bar cookie dragée brownie. Lollipop cotton candy cake bear claw oat cake. Dragée candy canes dessert tart. Marzipan dragée gummies lollipop jujubes chocolate bar candy canes. Icing gingerbread chupa chups cotton candy cookie sweet icing bonbon gummies. Gummies lollipop brownie biscuit danish chocolate cake. Danish powder cookie macaroon chocolate donut tart. Carrot cake dragée croissant lemon drops liquorice lemon drops cookie lollipop toffee. Carrot cake carrot cake liquorice sugar plum topping bonbon pie muffin jujubes. Jelly pastry wafer tart caramels bear claw. Tiramisu tart pie cake danish lemon drops. Brownie cupcake dragée gummies.",
+        ImageUrl = "https://gillcleerenpluralsight.blob.core.windows.net/files/cheesecake.jpg",
+        InStock = true,
+    },
+    new Pie
+    {
+        PieName = "Cherry Pie", Price = 15.95, Description =
+            "Icing carrot cake jelly-o cheesecake. Sweet roll marzipan marshmallow toffee brownie brownie candy tootsie roll. Chocolate cake gingerbread tootsie roll oat cake pie chocolate bar cookie dragée brownie. Lollipop cotton candy cake bear claw oat cake. Dragée candy canes dessert tart. Marzipan dragée gummies lollipop jujubes chocolate bar candy canes. Icing gingerbread chupa chups cotton candy cookie sweet icing bonbon gummies. Gummies lollipop brownie biscuit danish chocolate cake. Danish powder cookie macaroon chocolate donut tart. Carrot cake dragée croissant lemon drops liquorice lemon drops cookie lollipop toffee. Carrot cake carrot cake liquorice sugar plum topping bonbon pie muffin jujubes. Jelly pastry wafer tart caramels bear claw. Tiramisu tart pie cake danish lemon drops. Brownie cupcake dragée gummies.",
+        ImageUrl = "https://gillcleerenpluralsight.blob.core.windows.net/files/cherrypie.jpg",
+        InStock = true,
+    },
+    new Pie
+    {
+        PieName = "Christmas Apple Pie", Price = 13.95, Description =
+            "Icing carrot cake jelly-o cheesecake. Sweet roll marzipan marshmallow toffee brownie brownie candy tootsie roll. Chocolate cake gingerbread tootsie roll oat cake pie chocolate bar cookie dragée brownie. Lollipop cotton candy cake bear claw oat cake. Dragée candy canes dessert tart. Marzipan dragée gummies lollipop jujubes chocolate bar candy canes. Icing gingerbread chupa chups cotton candy cookie sweet icing bonbon gummies. Gummies lollipop brownie biscuit danish chocolate cake. Danish powder cookie macaroon chocolate donut tart. Carrot cake dragée croissant lemon drops liquorice lemon drops cookie lollipop toffee. Carrot cake carrot cake liquorice sugar plum topping bonbon pie muffin jujubes. Jelly pastry wafer tart caramels bear claw. Tiramisu tart pie cake danish lemon drops. Brownie cupcake dragée gummies.",
+        ImageUrl = "https://gillcleerenpluralsight.blob.core.windows.net/files/christmasapplepie.jpg",
+        InStock = true
+    },
+    new Pie
+    {
+        PieName = "Cranberry Pie", Price = 17.95, Description =
+            "Icing carrot cake jelly-o cheesecake. Sweet roll marzipan marshmallow toffee brownie brownie candy tootsie roll. Chocolate cake gingerbread tootsie roll oat cake pie chocolate bar cookie dragée brownie. Lollipop cotton candy cake bear claw oat cake. Dragée candy canes dessert tart. Marzipan dragée gummies lollipop jujubes chocolate bar candy canes. Icing gingerbread chupa chups cotton candy cookie sweet icing bonbon gummies. Gummies lollipop brownie biscuit danish chocolate cake. Danish powder cookie macaroon chocolate donut tart. Carrot cake dragée croissant lemon drops liquorice lemon drops cookie lollipop toffee. Carrot cake carrot cake liquorice sugar plum topping bonbon pie muffin jujubes. Jelly pastry wafer tart caramels bear claw. Tiramisu tart pie cake danish lemon drops. Brownie cupcake dragée gummies.",
+        ImageUrl = "https://gillcleerenpluralsight.blob.core.windows.net/files/cranberrypie.jpg",
+        InStock = true
+    },
+    new Pie
+    {
+        PieName = "Peach Pie", Price = 15.95, Description =
+            "Icing carrot cake jelly-o cheesecake. Sweet roll marzipan marshmallow toffee brownie brownie candy tootsie roll. Chocolate cake gingerbread tootsie roll oat cake pie chocolate bar cookie dragée brownie. Lollipop cotton candy cake bear claw oat cake. Dragée candy canes dessert tart. Marzipan dragée gummies lollipop jujubes chocolate bar candy canes. Icing gingerbread chupa chups cotton candy cookie sweet icing bonbon gummies. Gummies lollipop brownie biscuit danish chocolate cake. Danish powder cookie macaroon chocolate donut tart. Carrot cake dragée croissant lemon drops liquorice lemon drops cookie lollipop toffee. Carrot cake carrot cake liquorice sugar plum topping bonbon pie muffin jujubes. Jelly pastry wafer tart caramels bear claw. Tiramisu tart pie cake danish lemon drops. Brownie cupcake dragée gummies.",
+        ImageUrl = "https://gillcleerenpluralsight.blob.core.windows.net/files/peachpie.jpg",
+        InStock = false,
+    },
+    new Pie
+    {
+        PieName = "Pumpkin Pie", Price = 12.95, Description =
+            "Icing carrot cake jelly-o cheesecake. Sweet roll marzipan marshmallow toffee brownie brownie candy tootsie roll. Chocolate cake gingerbread tootsie roll oat cake pie chocolate bar cookie dragée brownie. Lollipop cotton candy cake bear claw oat cake. Dragée candy canes dessert tart. Marzipan dragée gummies lollipop jujubes chocolate bar candy canes. Icing gingerbread chupa chups cotton candy cookie sweet icing bonbon gummies. Gummies lollipop brownie biscuit danish chocolate cake. Danish powder cookie macaroon chocolate donut tart. Carrot cake dragée croissant lemon drops liquorice lemon drops cookie lollipop toffee. Carrot cake carrot cake liquorice sugar plum topping bonbon pie muffin jujubes. Jelly pastry wafer tart caramels bear claw. Tiramisu tart pie cake danish lemon drops. Brownie cupcake dragée gummies.",
+        ImageUrl = "https://gillcleerenpluralsight.blob.core.windows.net/files/pumpkinpie.jpg",
+        InStock = true,
+    }
+};
+
+this.BindingContext = Pies;
+#endregion
+```
+
+Alle bindings skal nu ændres, hvilket her sættes til element [0] i listen:
+```xml

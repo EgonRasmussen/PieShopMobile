@@ -10,7 +10,7 @@ namespace BethanysPieShopMobile
         {
             InitializeComponent();
 
-            MainPage = new MainPage();
+            MainPage = new PieDetailPage();
         }
 
         protected override void OnStart()
