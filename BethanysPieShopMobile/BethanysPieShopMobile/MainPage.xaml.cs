@@ -24,9 +24,10 @@ namespace BethanysPieShopMobile
             this.BindingContext = CherryPie;
         }
 
-        private void Button_Clicked(object sender, System.EventArgs e)
+        private void btnIncreasePrice_Clicked(object sender, System.EventArgs e)
         {
             CherryPie.Price++;
+            DisplayAlert("Price increaced!", "Price = " + CherryPie.Price, "Ok");
         }
     }
 }
