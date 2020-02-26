@@ -10,8 +10,7 @@ namespace BethanysPieShopMobile
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class PieOverview : ContentPage
     {
-        public List<Pie> Pies { get; set; }
-        //public ObservableCollection<Pie> Pies { get; set; }
+        public ObservableCollection<Pie> Pies { get; set; }
 
         public PieOverview()
         {
@@ -23,8 +22,7 @@ namespace BethanysPieShopMobile
                 PiesListView.IsRefreshing = false;
             });
 
-            Pies = new List<Pie>
-            //Pies = new ObservableCollection<Pie>
+            Pies = new ObservableCollection<Pie>
             {
                 new Pie
                 {
@@ -111,6 +109,20 @@ namespace BethanysPieShopMobile
             PiesListView.ItemsSource = Pies;
         }
 
+        private void AddPieButton_Clicked(object sender, EventArgs e)
+        {
+            var newPie = new Pie
+            {
+                PieName = "Pumpkin Pie",
+                Price = 12.95,
+                Description =
+                    "Icing carrot cake jelly-o cheesecake. Sweet roll marzipan marshmallow toffee brownie brownie candy tootsie roll. Chocolate cake gingerbread tootsie roll oat cake pie chocolate bar cookie dragée brownie. Lollipop cotton candy cake bear claw oat cake. Dragée candy canes dessert tart. Marzipan dragée gummies lollipop jujubes chocolate bar candy canes. Icing gingerbread chupa chups cotton candy cookie sweet icing bonbon gummies. Gummies lollipop brownie biscuit danish chocolate cake. Danish powder cookie macaroon chocolate donut tart. Carrot cake dragée croissant lemon drops liquorice lemon drops cookie lollipop toffee. Carrot cake carrot cake liquorice sugar plum topping bonbon pie muffin jujubes. Jelly pastry wafer tart caramels bear claw. Tiramisu tart pie cake danish lemon drops. Brownie cupcake dragée gummies.",
+                ImageUrl = "https://gillcleerenpluralsight.blob.core.windows.net/files/pumpkinpie.jpg",
+                InStock = true,
+            };
+            Pies.Add(newPie);
+        }
+
         private async void PiesListView_OnItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
             var selectedPie = e.SelectedItem as Pie;
@@ -163,20 +175,6 @@ namespace BethanysPieShopMobile
                 }
             };
             PiesListView.ItemsSource = pies;
-        }
-
-        private void AddPieButton_Clicked(object sender, EventArgs e)
-        {
-            var newPie = new Pie
-            {
-                PieName = "Pumpkin Pie",
-                Price = 12.95,
-                Description =
-                    "Icing carrot cake jelly-o cheesecake. Sweet roll marzipan marshmallow toffee brownie brownie candy tootsie roll. Chocolate cake gingerbread tootsie roll oat cake pie chocolate bar cookie dragée brownie. Lollipop cotton candy cake bear claw oat cake. Dragée candy canes dessert tart. Marzipan dragée gummies lollipop jujubes chocolate bar candy canes. Icing gingerbread chupa chups cotton candy cookie sweet icing bonbon gummies. Gummies lollipop brownie biscuit danish chocolate cake. Danish powder cookie macaroon chocolate donut tart. Carrot cake dragée croissant lemon drops liquorice lemon drops cookie lollipop toffee. Carrot cake carrot cake liquorice sugar plum topping bonbon pie muffin jujubes. Jelly pastry wafer tart caramels bear claw. Tiramisu tart pie cake danish lemon drops. Brownie cupcake dragée gummies.",
-                ImageUrl = "https://gillcleerenpluralsight.blob.core.windows.net/files/pumpkinpie.jpg",
-                InStock = true,
-            };
-            Pies.Add(newPie);
         }
     }
 }
