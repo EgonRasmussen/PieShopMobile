@@ -10,8 +10,8 @@ namespace BethanysPieShopMobile
         {
             InitializeComponent();
 
-            MainPage = new MainPage();
-            //MainPage = new ContentPageView();
+            //MainPage = new MainPage();
+             MainPage = new ContentPageView();
             //MainPage = new NavigationPage(new NavigationPageView());
             //MainPage = new TabbedPageView();
             //MainPage = new MasterDetailPageView();

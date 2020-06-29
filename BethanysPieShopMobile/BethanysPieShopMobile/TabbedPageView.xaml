@@ -6,6 +6,7 @@
              xmlns:helpers="clr-namespace:BethanysPieShopMobile.Helpers"
              mc:Ignorable="d"
              x:Class="BethanysPieShopMobile.TabbedPageView">
+    
     <helpers:HomePageView></helpers:HomePageView>
     <helpers:PieOverviewView></helpers:PieOverviewView>
     <helpers:BasketView></helpers:BasketView>
