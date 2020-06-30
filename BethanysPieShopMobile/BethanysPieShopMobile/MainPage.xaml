@@ -8,11 +8,11 @@
              x:Class="BethanysPieShopMobile.MainPage">
 
     <!--#2 Instantiate a Pie Object in XAML-->
-    <ContentPage.Resources>
+    <!--<ContentPage.Resources>
         <ResourceDictionary>
             <model:Pie PieName="Apple pie" Id="1" Price="20" x:Key="ApplePie"></model:Pie>
         </ResourceDictionary>
-    </ContentPage.Resources>
+    </ContentPage.Resources>-->
 
     <Grid Margin="20, 50, 20, 10" x:Name="MainGrid">
         <Grid.RowDefinitions>
