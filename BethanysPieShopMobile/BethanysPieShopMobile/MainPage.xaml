@@ -3,15 +3,16 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:model="clr-namespace:BethanysPieShopMobile.Model"
              mc:Ignorable="d"
              x:Class="BethanysPieShopMobile.MainPage">
 
     <!--#2 Instantiate a Pie Object in XAML-->
-    <!--<ContentPage.Resources>
+    <ContentPage.Resources>
         <ResourceDictionary>
             <model:Pie PieName="Apple pie" Id="1" Price="20" x:Key="ApplePie"></model:Pie>
         </ResourceDictionary>
-    </ContentPage.Resources>-->
+    </ContentPage.Resources>
 
     <Grid Margin="20, 50, 20, 10" x:Name="MainGrid">
         <Grid.RowDefinitions>

@@ -38,6 +38,8 @@ public class Pie
 }
 ```
 
+&nbsp;
+
 ### #1 Oprettelse af objekt og Databinding i kode
 I MainPage haves oprettelse af Pie-objekt og et par manuel binding:
 ```c#
@@ -63,6 +65,8 @@ PriceEntry.SetBinding(Entry.TextProperty, priceBinding);
 #endregion
 ```
 
+&nbsp;
+
 ### #2 Oprettelse af objekt og Databinding i XAML
 I MainPage.xaml tilføjes *namespace* til Pie modellen:
 `xmlns:model="clr-namespace:BethanysPieShopStockApp.Model"`
@@ -76,6 +80,11 @@ Der oprettes et object af Pie i XAML i en Resource:
     </ResourceDictionary>
 </ContentPage.Resources>
 ```
+Bemærk at der skal laves et namespace til `model`, således at Pie-modellen kan findes fra XAML:
+```xml
+xmlns:model="clr-namespace:BethanysPieShopMobile.Model" 
+```
+
 
 Der oprettes Databinding i XAML til begge Entry kontrollerne:
 ```xml
@@ -86,6 +95,8 @@ Der oprettes Databinding i XAML til begge Entry kontrollerne:
 <Entry Grid.Row="1" Grid.Column="1" Text="{Binding Price, Source={StaticResource ApplePie}}"></Entry>
 <Button Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" Text="Add pie"></Button>
 ```
+
+&nbsp;
 
 ### #3 Oprettelse af objekt i kode og Databinding i XAML
 Udkommentér oprettelsen af objekt i XAML og benyt oprettelsen i koden igen.
@@ -104,6 +115,8 @@ Nu er det ikke længere nødvendigt at angive Source i forbindelse med Databinding
 <Entry Grid.Row="1" Grid.Column="1" Text="{Binding Price}"></Entry>
 <Button Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" Text="Add pie"></Button>
 ```
+
+&nbsp;
 
 ### #4 Databinding til hele Pagen vha. en Property
 Ofte går man et skridt videre og laver en Property `CherryPie` i koden og binder hele Pagen `this` til en property, som vist her:
