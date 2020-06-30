@@ -7,7 +7,7 @@ namespace BethanysPieShopMobile
     [DesignTimeVisible(false)]
     public partial class MainPage : ContentPage
     {
-        public Pie CherryPie { get; set; }  // #4
+        public Pie CherryPie { get; set; }  
 
         public MainPage()
         {
