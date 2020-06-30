@@ -13,17 +13,17 @@
             <RowDefinition Height="50"></RowDefinition>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width=".4*"></ColumnDefinition>
-            <ColumnDefinition Width=".6*"></ColumnDefinition>
+            <ColumnDefinition Width="2*"></ColumnDefinition>
+            <ColumnDefinition Width="3*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
-        <Label x:Name="PieNameLabel" 
+        <Label Text="{Binding PieName}"
                Grid.Row="0" 
                Grid.Column="0" 
                Grid.ColumnSpan="2" 
                FontSize="Large" 
                HorizontalTextAlignment="Center" 
                VerticalTextAlignment="Center"></Label>
-        <Image x:Name="PieImage" 
+        <Image Source="{Binding ImageUrl}" 
                Grid.Row="1" 
                Grid.ColumnSpan="2" 
                Margin="10" 
@@ -31,14 +31,14 @@
                HeightRequest="200" 
                HorizontalOptions="Center" 
                VerticalOptions="Center"></Image>
-        <Label x:Name="PriceLabel" 
+        <Label Text="{Binding Price}"
                FontAttributes="Bold" 
                Grid.Row="2"></Label>
-        <Label x:Name="InStockLabel" 
+        <Switch IsEnabled="{Binding InStock}"
                Grid.Row="2" 
                Grid.Column="1" 
-               HorizontalOptions="End"></Label>
-        <Label x:Name="DescriptionLabel" 
+               HorizontalOptions="End"></Switch>
+        <Label Text="{Binding Description}"
                FontSize="Small" 
                Grid.Row="3" 
                Grid.ColumnSpan="2"></Label>

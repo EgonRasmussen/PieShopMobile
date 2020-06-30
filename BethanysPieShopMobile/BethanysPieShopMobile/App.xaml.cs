@@ -11,10 +11,9 @@ namespace BethanysPieShopMobile
         {
             InitializeComponent();
 
-            MainPage = new PieOverview();
+            MainPage = new NavigationPage(new PieOverview());
 
             //var alreadyRegistered = false;
-
             //if (alreadyRegistered)
             //    MainPage = new MainView();
             //else
