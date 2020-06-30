@@ -39,7 +39,7 @@
         <Entry Grid.Row="1" Grid.Column="1" Text="{Binding Price, Source={StaticResource ApplePie}}"></Entry>
         <Button Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" Text="Add pie"></Button>-->
 
-        <!--#3 Binding in XAML via BindingContext-->
+        <!--#3 og #4 Binding in XAML via BindingContext-->
         <!--<Label Grid.Row="0" Grid.Column="0" Text="Pie name"></Label>
         <Entry Grid.Row="0" Grid.Column="1" Text="{Binding PieName}"></Entry>
         <Label Grid.Row="1" Grid.Column="0" Text="Price"></Label>

@@ -106,7 +106,7 @@ Nu er det ikke længere nødvendigt at angive Source i forbindelse med Databinding
 ```
 
 ### #4 Databinding til hele Pagen vha. en Property
-Ofte går man et skridt videre og laver en Property `CherryPie` i koden og binder hele Pagen `this)`til denne, som vist her:
+Ofte går man et skridt videre og laver en Property `CherryPie` i koden og binder hele Pagen `this` til en property, som vist her:
 ```c#
 public Pie CherryPie { get; set; }  // #4
 
@@ -123,6 +123,7 @@ public MainPage()
     };
 
     #region #4 BINDING PAGE TIL PROPERTY
+    CherryPie = pie;
     this.BindingContext = CherryPie;
     #endregion
 }

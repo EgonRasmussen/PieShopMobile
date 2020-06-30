@@ -38,6 +38,7 @@ namespace BethanysPieShopMobile
             #endregion
 
             #region #4 BINDING PAGE TIL PROPERTY
+            //CherryPie = pie;
             //this.BindingContext = CherryPie;
             #endregion
         }
