@@ -15,11 +15,22 @@ Opret en ny page kaldet **ViewBindingPage.xaml** med følgende indhold:
         <ColumnDefinition Width="200"></ColumnDefinition>
         <ColumnDefinition Width="*"></ColumnDefinition>
     </Grid.ColumnDefinitions>
-    <Label Grid.Row="0" Grid.Column="0" Text="Pie name"></Label>
-    <Entry Grid.Row="0" Grid.Column="1" Text="{Binding PieName}"></Entry>
-    <Label Grid.Row="1" Grid.Column="0" Text="Price" ></Label>
-    <Label Grid.Row="1" Grid.Column="1"  Text="{Binding Value}" BindingContext="{x:Reference Name=PriceSlider}"></Label>
-    <Slider Grid.Row="2" x:Name="PriceSlider" Grid.ColumnSpan="2" Minimum="0" Maximum="30"></Slider>
+    <Label Grid.Row="0" Grid.Column="0" 
+        Text="Pie name"/>
+    <Entry Grid.Row="0" Grid.Column="1" 
+        Text="{Binding PieName}"/>
+    <Label Grid.Row="1" Grid.Column="0" 
+        Text="Price"/>
+
+    <Label Grid.Row="1" Grid.Column="1"  
+        Text="{Binding Value}"            
+        BindingContext="{x:Reference Name=PriceSlider}"/>
+
+    <Slider Grid.Row="2" 
+        x:Name="PriceSlider" 
+        Grid.ColumnSpan="2" 
+        Minimum="0" 
+        Maximum="30" />
     <Button Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" Text="Add pie"></Button>
 </Grid>
 ```
