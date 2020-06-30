@@ -7,7 +7,7 @@ namespace BethanysPieShopMobile
     [DesignTimeVisible(false)]
     public partial class MainPage : ContentPage
     {
-        public Pie CherryPie { get; set; }  // #4
+        public Pie CherryPie { get; set; } 
 
         public MainPage()
         {
@@ -27,7 +27,7 @@ namespace BethanysPieShopMobile
         private void btnIncreasePrice_Clicked(object sender, System.EventArgs e)
         {
             CherryPie.Price++;
-            DisplayAlert("Price increaced!", "Price = " + CherryPie.Price, "Ok");
+            DisplayAlert("Price increaced!", $"{CherryPie.PieName} has the Price = {CherryPie.Price}", "Ok");
         }
     }
 }

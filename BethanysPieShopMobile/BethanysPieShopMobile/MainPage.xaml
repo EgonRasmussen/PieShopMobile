@@ -18,11 +18,13 @@
             <ColumnDefinition Width="*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
 
-        <!--#1 Ændring af Binding mode-->
+        <!-- Ændring af Binding mode-->
         <Label Grid.Row="0" Grid.Column="0" Text="Pie name"></Label>
         <Entry Grid.Row="0" Grid.Column="1" Text="{Binding PieName, Mode=OneWay}"></Entry>
+        
         <Label Grid.Row="1" Grid.Column="0" Text="Price"></Label>
         <Entry Grid.Row="1" Grid.Column="1" Text="{Binding Price, Mode=TwoWay}"></Entry>
+        
         <Button Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" Text="Increment Price" Clicked="btnIncreasePrice_Clicked"></Button>
     </Grid>
 </ContentPage>

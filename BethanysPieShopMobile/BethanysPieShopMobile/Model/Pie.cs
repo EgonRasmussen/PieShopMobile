@@ -1,4 +1,7 @@
-﻿namespace BethanysPieShopMobile.Model
+﻿using System.ComponentModel;
+using System.Runtime.CompilerServices;
+
+namespace BethanysPieShopMobile.Model
 {
     public class Pie
     {
