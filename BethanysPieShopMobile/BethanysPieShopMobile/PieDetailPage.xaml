@@ -6,7 +6,7 @@
              mc:Ignorable="d"
              x:Class="BethanysPieShopMobile.PieDetailPage">
 
-    <!--#1 Binding to Single Object-->
+    <!--#1 Binding direct to Single Object-->
     <ScrollView>
         <Grid Padding="10">
             <Grid.RowDefinitions>
@@ -88,7 +88,7 @@
         </Grid>
     </ScrollView>
 
-    <!--#2 BINDING TO PROPERTIES-->
+    <!--#2 BINDING TO ViewModel-->
     <!--<ScrollView>
         <Grid Padding="10">
             <Grid.RowDefinitions>

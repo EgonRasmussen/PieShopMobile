@@ -10,13 +10,13 @@ namespace BethanysPieShopMobile
     {
         public Pie Pie { get; set; }        // #1
 
-        public PieDetailViewModel PieDetailViewModel { get; set; }  // #2
+        public PieDetailViewModel PieDetailViewModel { get; set; }  // #3
 
         public PieDetailPage()
         {
             InitializeComponent();
 
-            #region #1 BINDING SINGLE OBJECT
+            #region #1 BINDING DIRECT TO SINGLE OBJECT
             Pie = new Pie
             {
                 Id = 1,
@@ -29,9 +29,10 @@ namespace BethanysPieShopMobile
                 Price = 20.95
             };
             this.BindingContext = Pie;
+            //this.BindingContext = this;   // #2 BINDING VIA PAGE TO SINGLE OBJECT
             #endregion
 
-            #region #2 BINDING TO PROPERTIES
+            #region #3 BINDING TO VIEWMODEL
             //PieDetailViewModel = new PieDetailViewModel()
             //{
             //    Pie = new Pie
