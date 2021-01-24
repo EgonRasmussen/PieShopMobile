@@ -8,11 +8,11 @@
             <StackLayout>
                 <Label Text="Working with the Image" FontSize="Large" />
 
-                <Image Source="bethanylogo.png" ></Image>
+                <Image Source="bethanylogo.png" ></Image>                      <!--Default: Aspect Fit: Scale the image to fit the view. Some parts may be left empty (letter boxing).-->
 
-                <Image Source="applepiesmall.jpg" Aspect="Fill"></Image>
-                <Image Source="applepiesmall.jpg" Aspect="AspectFill"></Image>
-                <Image Source="applepiesmall.jpg" Aspect="AspectFit"></Image>
+                <Image Source="applepiesmall.jpg" Aspect="Fill"></Image>       <!--Scale the image so it exactly fills the view. Scaling may not be uniform in X and Y.-->
+                <Image Source="applepiesmall.jpg" Aspect="AspectFill"></Image> <!--Scale the image to fill the view. Some parts may be clipped in order to fill the view.-->
+                <Image Source="applepiesmall.jpg" Aspect="AspectFit"></Image>  <!--Scale the image to fit the view. Some parts may be left empty (letter boxing). Default -->
 
             </StackLayout>
            
