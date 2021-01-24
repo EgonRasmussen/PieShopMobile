@@ -3,6 +3,8 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="BethanysPieShopMobile.GridLayoutPage">
 
+    <!--<Grid RowDefinitions="100, 2*, *, Auto" ColumnDefinitions="*, *, *">-->    
+        
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="100"></RowDefinition>
@@ -23,6 +25,5 @@
         <BoxView Color="Violet"  Grid.Row="2" Grid.Column="2" />
         <Button Text="I want some space too!" Grid.Row="3" Grid.ColumnSpan="3" HorizontalOptions="Center"></Button>
     </Grid> 
-    
     
 </ContentPage>

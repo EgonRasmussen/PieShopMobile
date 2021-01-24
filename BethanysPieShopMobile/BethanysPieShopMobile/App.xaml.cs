@@ -1,6 +1,4 @@
-﻿using System;
-using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
+﻿using Xamarin.Forms;
 
 namespace BethanysPieShopMobile
 {
@@ -9,7 +7,6 @@ namespace BethanysPieShopMobile
         public App()
         {
             InitializeComponent();
-            //MainPage = new MainPage();
 
             MainPage = new StackLayoutPage();
             //MainPage = new LoginWithStackLayout();

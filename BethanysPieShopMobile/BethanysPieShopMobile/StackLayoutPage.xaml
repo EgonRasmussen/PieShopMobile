@@ -3,12 +3,35 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="BethanysPieShopMobile.StackLayoutPage">
 
-    <StackLayout Orientation="Vertical" Spacing="30">
-        <BoxView Color="Green" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"></BoxView>
-        <BoxView Color="Blue" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" />
-        <BoxView HeightRequest="75" Color="Red" VerticalOptions="End" HorizontalOptions="FillAndExpand" />
-        <Button Text="View basket" VerticalOptions="Start" HorizontalOptions="FillAndExpand" />
+    <!--EKSEMPLERNE FRA: https://docs.microsoft.com/en-us/xamarin/xamarin-forms/user-interface/layouts/layout-options-->
+    <!--Henvis til siden "Demo af Layout Options"-->
+
+    <!--Demo af ALIGNMENT, som styrer den modsatte akse af StackLayout (vertical, som alignment styrer altså horizontal)-->
+    <StackLayout Orientation="Vertical" Margin="0,20,0,0">
+        <Label Text="Start" BackgroundColor="Red" HorizontalOptions="Start" />
+        <Label Text="Center" BackgroundColor="Yellow" HorizontalOptions="Center" />
+        <Label Text="End" BackgroundColor="Green" HorizontalOptions="End" />
+        <Label Text="Fill" BackgroundColor="Gray" HorizontalOptions="Fill" />
+        <Label Text="Default = Fill" BackgroundColor="Blue" TextColor="White" />
     </StackLayout>
-    
-    
+
+    <!--Demo af EXPANSION (kun relevant for StackLayout), som styrer den SAMME akse som StackLayout (altså vertical)
+    De 4 Labels deler skærmen i 4 dele i vertikal (lodret) retning - men placerer sig forskelligt (tydeligt pga. de røde streger)-->
+    <!--<StackLayout Orientation="Vertical" Margin="0,20,0,0">
+            <BoxView BackgroundColor="Red" HeightRequest="1" />
+
+            <Label Text="StartAndExpand" BackgroundColor="Red" VerticalOptions="StartAndExpand" />
+            <BoxView BackgroundColor="Red" HeightRequest="1" />
+
+            <Label Text="CenterAndExpand" BackgroundColor="Yellow" VerticalOptions="CenterAndExpand" />
+            <BoxView BackgroundColor="Red" HeightRequest="1" />
+
+            <Label Text="EndAndExpand" BackgroundColor="Green" VerticalOptions="EndAndExpand" />
+            <BoxView BackgroundColor="Red" HeightRequest="1" />
+
+            <Label Text="FillAndExpand" BackgroundColor="Gray" VerticalOptions="FillAndExpand" />
+            <BoxView BackgroundColor="Red" HeightRequest="1" />
+        </StackLayout>-->
+
+
 </ContentPage>
