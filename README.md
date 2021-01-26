@@ -3,19 +3,11 @@
 ### Forsøg med Binding Modes
 I MainPage sættes binding til `PieName`til `Mode=OneWay` og binding til `Price`sættes til `TwoWay`.
 
-Desuden laves en eventhandler til Button, som sætter prisen op på CherryPie:
-```c#
-private void Button_Clicked(object sender, System.EventArgs e)
-{
-    CherryPie.Price++;
-}
-```
+1. Test af Binding Mode: Prøv at ændre både Pie name og Price og tryk på knappen for at udlæse objektet. 
+   Kun Price ændres pga. TwoWay. Ændre Mode for Pie Name og se at nu kan den også ændres fra UI -> Source
+   
+2. Klik på knappen for at forøge Price. Bemærk at prisen stiger på objektet, men det synkroniseres ikke ud på UI.
 
-1. Test forøgelse af Price
-2. Test med et breakpoint i Button-eventhandler at hvis man ændrer `Price` i Entry, 
-    opdateres det fra Destination tilbage til Source (pga. TwoWay binding).
-3. Test også at hvis man ændrer `PieName` og kører til breakpoint, så er navnet ikke ændret (pga. OneWay binding). 
-    Ændre til TwoWay og se at nu ændres den.
 
 &nbsp;
 
@@ -68,4 +60,4 @@ public class Pie : INotifyPropertyChanged
 }
 ```
 
-
+Nu sker der en synkronisering af UI!

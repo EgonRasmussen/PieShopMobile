@@ -6,25 +6,15 @@
              mc:Ignorable="d"
              x:Class="BethanysPieShopMobile.MainPage">
 
-    <Grid Margin="20, 50, 20, 10" x:Name="MainGrid">
-        <Grid.RowDefinitions>
-            <RowDefinition Height="50"></RowDefinition>
-            <RowDefinition Height="50"></RowDefinition>
-            <RowDefinition Height="50"></RowDefinition>
-            <RowDefinition Height="50"></RowDefinition>
-        </Grid.RowDefinitions>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="200"></ColumnDefinition>
-            <ColumnDefinition Width="*"></ColumnDefinition>
-        </Grid.ColumnDefinitions>
+    <Grid RowDefinitions="50,50,50,50" ColumnDefinitions="200,*" Margin="20, 50, 20, 10" >
 
         <!-- Ændring af Binding mode-->
-        <Label Grid.Row="0" Grid.Column="0" Text="Pie name"></Label>
-        <Entry Grid.Row="0" Grid.Column="1" Text="{Binding PieName, Mode=OneWay}"></Entry>
-        
+        <Label Grid.Row="0" Grid.Column="0" Text="Pie name" />
+        <Entry Grid.Row="0" Grid.Column="1" Text="{Binding PieName, Mode=TwoWay}" />
+
         <Label Grid.Row="1" Grid.Column="0" Text="Price"></Label>
-        <Entry Grid.Row="1" Grid.Column="1" Text="{Binding Price, Mode=TwoWay}"></Entry>
-        
-        <Button Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" Text="Increment Price" Clicked="btnIncreasePrice_Clicked"></Button>
+        <Entry Grid.Row="1" Grid.Column="1" Text="{Binding Price, Mode=TwoWay}" />
+
+        <Button Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" Text="Increment Price" Clicked="btnIncreasePrice_Clicked" />
     </Grid>
 </ContentPage>
