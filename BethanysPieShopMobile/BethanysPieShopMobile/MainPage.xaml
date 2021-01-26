@@ -14,38 +14,28 @@
         </ResourceDictionary>
     </ContentPage.Resources>-->
 
-    <Grid Margin="20, 50, 20, 10" x:Name="MainGrid">
-        <Grid.RowDefinitions>
-            <RowDefinition Height="50"></RowDefinition>
-            <RowDefinition Height="50"></RowDefinition>
-            <RowDefinition Height="50"></RowDefinition>
-            <RowDefinition Height="50"></RowDefinition>
-        </Grid.RowDefinitions>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="200"></ColumnDefinition>
-            <ColumnDefinition Width="*"></ColumnDefinition>
-        </Grid.ColumnDefinitions>
+    <Grid x:Name="MainGrid" RowDefinitions="50,50,50,50" ColumnDefinitions="200,*" Margin="20, 50, 20, 10">
 
         <!--#1 Binding in code-->
-        <Label Grid.Row="0" Grid.Column="0" Text="Pie name" ></Label>
-        <Entry Grid.Row="0" Grid.Column="1" x:Name="NameEntry"></Entry>
-        <Label Grid.Row="1" Grid.Column="0" Text="Price"></Label>
-        <Entry Grid.Row="1" Grid.Column="1" x:Name="PriceEntry"></Entry>
-        <Button Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" Text="Add pie"></Button>
+        <Label Grid.Row="0" Grid.Column="0" Text="Pie name" />
+        <Entry Grid.Row="0" Grid.Column="1" x:Name="NameEntry" />
+        <Label Grid.Row="1" Grid.Column="0" Text="Price" />
+        <Entry Grid.Row="1" Grid.Column="1" x:Name="PriceEntry" />
+        <Button Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" Text="Add pie" />
 
         <!--#2 Binding in XAML-->
-        <!--<Label Grid.Row="0" Grid.Column="0" Text="Pie name"></Label>
-        <Entry Grid.Row="0" Grid.Column="1" Text="{Binding PieName, Source={StaticResource ApplePie}}"></Entry>
+        <!--<Label Grid.Row="0" Grid.Column="0" Text="Pie name" />
+        <Entry Grid.Row="0" Grid.Column="1" Text="{Binding PieName, Source={StaticResource ApplePie}}" />
         <Label Grid.Row="1" Grid.Column="0" Text="Price"></Label>
-        <Entry Grid.Row="1" Grid.Column="1" Text="{Binding Price, Source={StaticResource ApplePie}}"></Entry>
-        <Button Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" Text="Add pie"></Button>-->
+        <Entry Grid.Row="1" Grid.Column="1" Text="{Binding Price, Source={StaticResource ApplePie}}" />
+        <Button Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" Text="Add pie" />-->
 
-        <!--#3 og #4 Binding in XAML via BindingContext-->
-        <!--<Label Grid.Row="0" Grid.Column="0" Text="Pie name"></Label>
-        <Entry Grid.Row="0" Grid.Column="1" Text="{Binding PieName}"></Entry>
-        <Label Grid.Row="1" Grid.Column="0" Text="Price"></Label>
-        <Entry Grid.Row="1" Grid.Column="1" Text="{Binding Price}"></Entry>
-        <Button Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" Text="Add pie"></Button>-->
+        <!--#3 og #4 Binding in XAML via BindingContext på MainGrid-->
+        <!--<Label Grid.Row="0" Grid.Column="0" Text="Pie name" />
+        <Entry Grid.Row="0" Grid.Column="1" Text="{Binding PieName}" />
+        <Label Grid.Row="1" Grid.Column="0" Text="Price" />
+        <Entry Grid.Row="1" Grid.Column="1" Text="{Binding Price}" />
+        <Button Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" Text="Add pie" />-->
     </Grid>
 
 

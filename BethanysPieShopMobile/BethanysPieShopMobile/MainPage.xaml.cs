@@ -37,9 +37,8 @@ namespace BethanysPieShopMobile
             //MainGrid.BindingContext = pie;
             #endregion
 
-            #region #4 BINDING PAGE TIL PROPERTY
-            //CherryPie = pie;
-            //this.BindingContext = CherryPie;
+            #region #4 BINDING THE WHOLE PAGE
+            //this.BindingContext = pie;
             #endregion
         }
     }
