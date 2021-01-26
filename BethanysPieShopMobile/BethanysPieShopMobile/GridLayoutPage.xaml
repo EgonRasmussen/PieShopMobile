@@ -3,10 +3,10 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="BethanysPieShopMobile.GridLayoutPage">
 
-    <!--<Grid RowDefinitions="100, 2*, *, Auto" ColumnDefinitions="*, *, *">-->    
+    <Grid RowDefinitions="100, 2*, *, Auto" ColumnDefinitions="*, *, *">    
         
-    <Grid>
-        <Grid.RowDefinitions>
+    <!--<Grid>-->
+        <!--<Grid.RowDefinitions>
             <RowDefinition Height="100"></RowDefinition>
             <RowDefinition Height="2*"></RowDefinition>
             <RowDefinition Height="*"></RowDefinition>
@@ -16,7 +16,7 @@
             <ColumnDefinition Width="*"></ColumnDefinition>
             <ColumnDefinition Width="*"></ColumnDefinition>
             <ColumnDefinition Width="*"></ColumnDefinition>
-        </Grid.ColumnDefinitions>
+        </Grid.ColumnDefinitions>-->
         <Label Text="Welcome to Bethany's Pie Shop" Grid.ColumnSpan="3" HorizontalOptions="Center" VerticalOptions="Center"></Label>
         <BoxView Color="Green"  Grid.Row="1" Grid.Column="0" />
         <BoxView Color="Red"  Grid.Row="1" Grid.Column="1" />
