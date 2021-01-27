@@ -2,20 +2,17 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="BethanysPieShopMobile.PieOverview">
-    <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="*" />
-            <RowDefinition Height="50" />
-        </Grid.RowDefinitions>
 
-        <ListView VerticalOptions="FillAndExpand" 
-                  x:Name="PiesListView" 
+    <Grid RowDefinitions="*, 50">
+        <ListView x:Name="PiesListView"
+                  VerticalOptions="FillAndExpand"                
                   CachingStrategy="RecycleElement">
         </ListView>
-        
+
         <Button x:Name="AddPieButton"
             Clicked="AddPieButton_Clicked"
             Text="Add Pie"
             Grid.Row="1" />
     </Grid>
+    
 </ContentPage>

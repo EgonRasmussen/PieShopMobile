@@ -1,7 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using BethanysPieShopMobile.Model;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -29,6 +27,7 @@ namespace BethanysPieShopMobile
         private void AddPieButton_Clicked(object sender, EventArgs e)
         {
             Pies.Add("Pumpkin Pie");
+            AddPieButton.Text = "Pies Count: " + Pies.Count;
         }
     }
 }
