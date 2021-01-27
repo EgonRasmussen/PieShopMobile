@@ -2,24 +2,22 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="BethanysPieShopMobile.PieOverview">
-    <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="*" />
-            <RowDefinition Height="50" />
-        </Grid.RowDefinitions>
+    
+    <Grid RowDefinitions="*, 50">
 
         <ListView VerticalOptions="FillAndExpand" 
                   x:Name="PiesListView" 
                   CachingStrategy="RecycleElement" 
                   ItemSelected="PiesListView_OnItemSelected" 
                   IsPullToRefreshEnabled="True" >
-
-            <ListView.ItemTemplate>
+<!--TextCell-->
+            <!--<ListView.ItemTemplate>
                 <DataTemplate>
-                    <TextCell Text="{Binding PieName}" Detail="{Binding Price}"></TextCell>
+                    <TextCell Text="{Binding PieName}" Detail="{Binding Price}" />
                 </DataTemplate>
-            </ListView.ItemTemplate>
+            </ListView.ItemTemplate>-->
 
+<!--ImageCell-->
             <!--<ListView.ItemTemplate>
                 <DataTemplate>
                     <ImageCell Text="{Binding PieName}" Detail="{Binding Price}" ImageSource="{Binding ImageUrl}"
@@ -27,30 +25,23 @@
                 </DataTemplate>
             </ListView.ItemTemplate>-->
 
+ <!--CustomCell-->
             <!--<ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
-                        <Grid Margin="5" BackgroundColor="White" RowSpacing="2">
-                            <Grid.RowDefinitions>
-                                <RowDefinition Height="*"></RowDefinition>
-                            </Grid.RowDefinitions>
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="50"></ColumnDefinition>
-                                <ColumnDefinition Width="*"></ColumnDefinition>
-                                <ColumnDefinition Width="50"></ColumnDefinition>
-                            </Grid.ColumnDefinitions>
-                            <Image Grid.Row="0" HeightRequest="100" WidthRequest="100" VerticalOptions="Start" Margin="2,2,1,2" Source="{Binding ImageUrl}"></Image>
-                            <Label Grid.Row="0" Grid.Column="1" VerticalOptions="Start" Text="{Binding PieName}" Margin="3" ></Label>
-                            <Label Grid.Row="0" Grid.Column="2" Margin="3" Text="{Binding Price}" FontAttributes="Bold" HorizontalTextAlignment="End"></Label>
+                        <Grid RowDefinitions="*,Auto" ColumnDefinitions="50,*,50" Margin="5" BackgroundColor="White" RowSpacing="2">
+                            <Image Grid.Column="0" Source="{Binding ImageUrl}" HeightRequest="100" WidthRequest="100" Margin="2,2,1,2" />
+                            <Label Grid.Column="1" Text="{Binding PieName}" VerticalOptions="Start" Margin="3" />
+                            <Label Grid.Column="2" Text="{Binding Price}" FontAttributes="Bold" HorizontalTextAlignment="End"  Margin="3" />
                         </Grid>
                     </ViewCell>
                 </DataTemplate>
             </ListView.ItemTemplate>-->
-            
+
         </ListView>
         <Button x:Name="AddPieButton"
-            Clicked="AddPieButton_Clicked"
-            Text="Add Pie"
-            Grid.Row="1" />
+                Clicked="AddPieButton_Clicked"
+                Text="Add Pie"
+                Grid.Row="1" />
     </Grid>
 </ContentPage>

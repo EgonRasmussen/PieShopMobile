@@ -13,6 +13,8 @@ namespace BethanysPieShopMobile
 
             MainPage = new NavigationPage(new PieOverview());
 
+            //MainPage = new SettingsTableView();
+
             //var alreadyRegistered = false;
             //if (alreadyRegistered)
             //    MainPage = new MainView();
