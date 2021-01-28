@@ -15,11 +15,11 @@ namespace BethanysPieShopMobile
 
             //MainPage = new SettingsTableView();
 
-            //var alreadyRegistered = false;
-            //if (alreadyRegistered)
-            //    MainPage = new MainView();
-            //else
-            //    MainPage = new NavigationPage(new LoginView());
+            var alreadyRegistered = false;
+            if (alreadyRegistered)
+                MainPage = new AppShell();
+            else
+                MainPage = new NavigationPage(new LoginView());
         }
 
         protected override void OnStart()

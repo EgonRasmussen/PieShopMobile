@@ -3,6 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="BethanysPieShopMobile.ContactView"
              BackgroundImage="patternwide.png">
+
     <StackLayout>
         <Image Source="bethanylogo.png" 
                HeightRequest="100" 

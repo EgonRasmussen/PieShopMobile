@@ -3,51 +3,42 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="BethanysPieShopMobile.LoginView"
              BackgroundImage="patternwide.png">
-    <Grid Margin="5">
-        <Grid.RowDefinitions>
-            <RowDefinition Height="200"></RowDefinition>
-            <RowDefinition Height="100"></RowDefinition>
-            <RowDefinition Height="50"></RowDefinition>
-            <RowDefinition Height="50"></RowDefinition>
-            <RowDefinition Height="*"></RowDefinition>
-        </Grid.RowDefinitions>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="4*"></ColumnDefinition>
-            <ColumnDefinition Width="6*"></ColumnDefinition>
-        </Grid.ColumnDefinitions>
+    
+    <Grid RowDefinitions="200,100,50,50,*" ColumnDefinitions="4*,6*" Margin="5">
+
         <Image Source="bethanylogo.png" 
                Grid.Row="0" 
                Grid.ColumnSpan="2" 
                Margin="10" 
                HorizontalOptions="Center" 
-               VerticalOptions="Center"></Image>
+               VerticalOptions="Center"/>
         <Label Text="Welcome to Bethany's Pie Shop" 
                Grid.Row="1" 
                Grid.Column="0" 
                Grid.ColumnSpan="2" 
                FontSize="Large" 
                HorizontalTextAlignment="Center" 
-               VerticalTextAlignment="Center"></Label>
+               VerticalTextAlignment="Center"/>
         <Label Text="User name" 
                Grid.Row="2" 
                Grid.Column="0" 
                FontSize="Medium" 
-               VerticalOptions="Center"></Label>
+               VerticalOptions="Center"/>
         <Label Text="Password" 
                Grid.Row="3" 
                Grid.Column="0" 
                FontSize="Medium" 
-               VerticalOptions="Center"></Label>
+               VerticalOptions="Center"/>
         <Entry Grid.Row="2" 
                Grid.Column="1" 
                Placeholder="Enter your user name" 
                HorizontalOptions="StartAndExpand" 
-               VerticalOptions="Center"></Entry>
+               VerticalOptions="Center"/>
         <Entry Grid.Row="3" 
                Grid.Column="1" 
                Placeholder="Enter your password" 
                HorizontalOptions="StartAndExpand" 
-               VerticalOptions="Center"></Entry>
+               VerticalOptions="Center"/>
         <Button x:Name="LoginButton"
                 Text="Login" 
                 HorizontalOptions="Center" 
@@ -56,7 +47,6 @@
                 Grid.Row="4" 
                 Grid.ColumnSpan="2" 
                 TextColor="White"
-                Clicked="LoginButton_OnClicked"
-                ></Button>
+                Clicked="LoginButton_OnClicked"/>
     </Grid>
 </ContentPage>

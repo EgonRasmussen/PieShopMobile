@@ -4,25 +4,16 @@
              x:Class="BethanysPieShopMobile.PieDetailView"
              Padding="5"
              BackgroundImage="patternwide.png">
-    <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="50"></RowDefinition>
-            <RowDefinition Height="150"></RowDefinition>
-            <RowDefinition Height="50"></RowDefinition>
-            <RowDefinition Height="200"></RowDefinition>
-            <RowDefinition Height="50"></RowDefinition>
-        </Grid.RowDefinitions>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="2*"></ColumnDefinition>
-            <ColumnDefinition Width="3*"></ColumnDefinition>
-        </Grid.ColumnDefinitions>
+    
+    <Grid RowDefinitions="50,150,50,200,50" ColumnDefinitions="2*,3*">
+
         <Label Text="{Binding PieName}"
                Grid.Row="0" 
                Grid.Column="0" 
                Grid.ColumnSpan="2" 
                FontSize="Large" 
                HorizontalTextAlignment="Center" 
-               VerticalTextAlignment="Center"></Label>
+               VerticalTextAlignment="Center"/>
         <Image Source="{Binding ImageUrl}" 
                Grid.Row="1" 
                Grid.ColumnSpan="2" 
@@ -30,18 +21,18 @@
                WidthRequest="200" 
                HeightRequest="200" 
                HorizontalOptions="Center" 
-               VerticalOptions="Center"></Image>
+               VerticalOptions="Center"/>
         <Label Text="{Binding Price}"
                FontAttributes="Bold" 
-               Grid.Row="2"></Label>
+               Grid.Row="2"/>
         <Switch IsEnabled="{Binding InStock}"
                Grid.Row="2" 
                Grid.Column="1" 
-               HorizontalOptions="End"></Switch>
+               HorizontalOptions="End"/>
         <Label Text="{Binding Description}"
                FontSize="Small" 
                Grid.Row="3" 
-               Grid.ColumnSpan="2"></Label>
+               Grid.ColumnSpan="2"/>
         <Button x:Name="AddToBasketButton" 
                 Clicked="AddToBasketButton_OnClicked" 
                 Text="Add to basket" 
@@ -50,6 +41,6 @@
                 BackgroundColor="#22cfa7" 
                 Grid.Row="4" 
                 Grid.ColumnSpan="2" 
-                TextColor="White"></Button>
+                TextColor="White"/>
     </Grid>
 </ContentPage>

@@ -3,15 +3,16 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="BethanysPieShopMobile.WebPageView" 
              BackgroundImage="patternwide.png">
+
     <StackLayout>
 
         <Label Text="Visit our site" 
                FontSize="Large" 
                HorizontalTextAlignment="Center" 
-               VerticalTextAlignment="Center"></Label>
+               VerticalTextAlignment="Center"/>
 
         <WebView Source="https://www.eucsyd.dk" 
                  HeightRequest="500"
-                 WidthRequest="500"></WebView>
+                 WidthRequest="500"/>
     </StackLayout>
 </ContentPage>
