@@ -5,10 +5,10 @@
              x:Class="BethanysPieShopMobile.App">
     <Application.Resources>
         <ResourceDictionary>
-            <!--Opgave 10.2.4-->
+            <!--Opgave 12.2.4-->
             <!--<Color x:Key="BethanysGreenColor ">#22cfa7</Color>-->
             
-            <!--Opgave 10.2.3-->
+            <!--Opgave 12.2.3-->
             <!--<Style x:Key="RegularButtonStyle" TargetType="Button">
                 
                 <Setter Property="HorizontalOptions" Value="Center" />
@@ -17,7 +17,7 @@
                 <Setter Property="TextColor" Value="White" />
             </Style>-->
             
-            <!--Opgave 10.2.8-->
+            <!--Opgave 12.2.8-->
             <!--<ResourceDictionary.MergedDictionaries>
                 <bethanysPieShopMobile:ColorDictionary />
             </ResourceDictionary.MergedDictionaries>-->
