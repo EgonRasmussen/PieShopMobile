@@ -11,7 +11,7 @@ namespace BethanysPieShopMobile
         {
             InitializeComponent();
 
-            MainPage = new AppShell();
+            //MainPage = new AppShell();
 
             //MainPage = new SettingsTableView();
 
