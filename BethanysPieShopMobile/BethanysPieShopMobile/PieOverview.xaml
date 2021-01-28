@@ -1,6 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:converters="clr-namespace:BethanysPieShopMobile.Converters"
              x:Class="BethanysPieShopMobile.PieOverview"
              Shell.TabBarIsVisible="false"
              Title="PieOverview">
@@ -12,29 +13,18 @@
                   CachingStrategy="RecycleElement" 
                   ItemSelected="PiesListView_OnItemSelected" 
                   IsPullToRefreshEnabled="True" >
-<!--TextCell-->
-            <!--<ListView.ItemTemplate>
-                <DataTemplate>
-                    <TextCell Text="{Binding PieName}" Detail="{Binding Price}" />
-                </DataTemplate>
-            </ListView.ItemTemplate>-->
 
-<!--ImageCell-->
-            <!--<ListView.ItemTemplate>
-                <DataTemplate>
-                    <ImageCell Text="{Binding PieName}" Detail="{Binding Price}" ImageSource="{Binding ImageUrl}"
-                               TextColor="#22cfa7"></ImageCell>
-                </DataTemplate>
-            </ListView.ItemTemplate>-->
-
- CustomCell
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
                         <Grid RowDefinitions="*,Auto" ColumnDefinitions="50,*,50" Margin="5" BackgroundColor="White" RowSpacing="2">
-                            <Image Grid.Column="0" Source="{Binding ImageUrl}" HeightRequest="100" WidthRequest="100" Margin="2,2,1,2" />
+                            <Image Grid.Column="0" Source="{Binding ImageUrl, TargetNullValue='https://gillcleerenpluralsight.blob.core.windows.net/files/default-pie.png' }" HeightRequest="100" WidthRequest="100" Margin="2,2,1,2" />
                             <Label Grid.Column="1" Text="{Binding PieName}" VerticalOptions="Start" Margin="3" />
-                            <Label Grid.Column="2" Text="{Binding Price}" FontAttributes="Bold" HorizontalTextAlignment="End"  Margin="3" />
+                            <Label Grid.Column="2"  FontAttributes="Bold" HorizontalTextAlignment="End"  Margin="3" 
+                                   
+                                   Text="{Binding Price}"
+                                   
+                             ></Label>
                         </Grid>
                     </ViewCell>
                 </DataTemplate>
@@ -47,3 +37,14 @@
                 Grid.Row="1" />
     </Grid>
 </ContentPage>
+    
+<!--Forskellige eksempler på Binding Properties i DataTemplaten:-->   
+    <!--Text="{Binding Price}"-->
+    <!--Text="{Binding Price, StringFormat='{0:c}'}"-->
+    <!--Text="{Binding PremiumPrice, FallbackValue='???'}"-->
+    <!--<Image Grid.Column="0" Source="{Binding ImageUrl, TargetNullValue='https://gillcleerenpluralsight.blob.core.windows.net/files/default-pie.png' }" HeightRequest="100" WidthRequest="100" Margin="2,2,1,2" />-->
+
+<!--Forskellige eksempler på ValueConverters i DataTemplaten-->
+<!--Text="{Binding Price, Converter={StaticResource LocalCurrencyConverter}}"-->   
+<!--TextColor="{Binding Price, Converter={StaticResource LocalDoubleToColorConverter}, ConverterParameter=16.0}"-->
+<!--Text="{Binding Price, Converter={converters:DoNothingConverter}}"-->

@@ -13,9 +13,7 @@ namespace BethanysPieShopMobile
 
             //MainPage = new AppShell();
 
-            //MainPage = new SettingsTableView();
-
-            var alreadyRegistered = false;
+            var alreadyRegistered = true;
             if (alreadyRegistered)
                 MainPage = new AppShell();
             else
