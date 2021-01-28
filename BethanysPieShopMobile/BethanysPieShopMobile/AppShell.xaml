@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Shell xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="BethanysPieShopMobile.AppShell"
+             xmlns:pages="clr-namespace:BethanysPieShopMobile">
+
+    <FlyoutItem FlyoutDisplayOptions="AsMultipleItems" >
+        <pages:PieOverview Title="PieOverview" IconImageSource="pie.png" />
+        <pages:SettingsTableView Title="Settings" />
+    </FlyoutItem>
+</Shell>
