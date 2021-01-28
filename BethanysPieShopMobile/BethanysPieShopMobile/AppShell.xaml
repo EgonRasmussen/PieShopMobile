@@ -4,10 +4,11 @@
              x:Class="BethanysPieShopMobile.AppShell"
              xmlns:pages="clr-namespace:BethanysPieShopMobile">
 
-    <pages:PieOverview Title="PieOverview" />
-    <pages:WebPageView Title="Visit Us" />
-    <pages:ContactView Title="Contact Us" />
-    <pages:RegisterView Title="Registrer" />
-    <pages:SettingsTableView Title="Settings" />
-
+    <FlyoutItem FlyoutDisplayOptions="AsMultipleItems">
+        <ShellContent Title="PieOverview" Icon="pie.png" ContentTemplate="{DataTemplate pages:PieOverview}" />
+        <ShellContent Title="Visit Us" Icon="visitus" ContentTemplate="{DataTemplate pages:WebPageView}" />
+        <ShellContent Title="Contact Us" Icon="contactus.png" ContentTemplate="{DataTemplate pages:ContactView}" />
+        <ShellContent Title="Registrer" Icon="signup.png" ContentTemplate="{DataTemplate pages:RegisterView}"  />
+        <ShellContent Title="Settings" Icon="settings.png" ContentTemplate="{DataTemplate pages:SettingsTableView}" />
+    </FlyoutItem>
 </Shell>

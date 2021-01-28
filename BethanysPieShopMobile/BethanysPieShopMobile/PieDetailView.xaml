@@ -3,7 +3,8 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="BethanysPieShopMobile.PieDetailView"
              Padding="5"
-             BackgroundImage="patternwide.png">
+             BackgroundImage="patternwide.png"
+             Shell.TabBarIsVisible="false">
     
     <Grid RowDefinitions="50,150,50,200,50" ColumnDefinitions="2*,3*">
 
