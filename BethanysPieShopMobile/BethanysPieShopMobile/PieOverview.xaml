@@ -18,7 +18,7 @@
                 <DataTemplate>
                     <ViewCell>
                         <Grid RowDefinitions="*,Auto" ColumnDefinitions="50,*,50" Margin="5" BackgroundColor="White" RowSpacing="2">
-                            <Image Grid.Column="0" Source="{Binding ImageUrl, TargetNullValue='https://gillcleerenpluralsight.blob.core.windows.net/files/default-pie.png' }" HeightRequest="100" WidthRequest="100" Margin="2,2,1,2" />
+                            <Image Grid.Column="0" Source="{Binding ImageUrl}" HeightRequest="100" WidthRequest="100" Margin="2,2,1,2" />
                             <Label Grid.Column="1" Text="{Binding PieName}" VerticalOptions="Start" Margin="3" />
                             <Label Grid.Column="2"  FontAttributes="Bold" HorizontalTextAlignment="End"  Margin="3" 
                                    
