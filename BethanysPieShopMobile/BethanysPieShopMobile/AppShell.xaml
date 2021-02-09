@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Shell xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:helpers="clr-namespace:BethanysPieShopMobile.Helpers"
+             x:Class="BethanysPieShopMobile.AppShell">
+
+    <TabBar>
+        <Tab Title="Home" Icon="home.png">
+            <ShellContent>
+                <helpers:HomePageView />
+            </ShellContent>
+        </Tab>
+        <Tab Title="PieOverview" Icon="pie.png">
+            <ShellContent>
+                <helpers:PieOverviewView />
+            </ShellContent>
+        </Tab>
+        <Tab Title="Basket" Icon="basket.png">
+            <ShellContent>
+                <helpers:BasketView />
+            </ShellContent>
+        </Tab>
+        <Tab Title="Contact Us" Icon="contact.png">
+            <ShellContent>
+                <helpers:ContactusView />
+            </ShellContent>
+        </Tab>
+    </TabBar>
+
+    <!--<TabBar>
+        <helpers:HomePageView Title="Home" IconImageSource="home.png"/>
+        <helpers:PieOverviewView Title="PieOverview" IconImageSource="pie.png"/>
+        <helpers:BasketView Title="Basket" IconImageSource="basket.png" />
+        <helpers:ContactusView Title="Contact Us" IconImageSource="contact.png" />
+    </TabBar>-->
+
+
+    <!--<FlyoutItem Title="Home" Icon="home.png">
+        <Tab>
+            <ShellContent>
+                <helpers:HomePageView />
+            </ShellContent>
+        </Tab>
+    </FlyoutItem>
+    <FlyoutItem Title="PieOverview" Icon="pie.png">
+        <Tab>
+            <ShellContent>
+                <helpers:PieOverviewView />
+            </ShellContent>
+        </Tab>
+    </FlyoutItem>
+    <FlyoutItem Title="Basket" Icon="basket.png">
+        <Tab>
+            <ShellContent>
+                <helpers:BasketView />
+            </ShellContent>
+        </Tab>
+    </FlyoutItem>
+    <FlyoutItem Title="Contact Us" Icon="contact.png">
+        <Tab>
+            <ShellContent>
+                <helpers:ContactusView />
+            </ShellContent>
+        </Tab>
+    </FlyoutItem>-->
+
+    
+    <!--<helpers:HomePageView Title="Home" IconImageSource="home.png"/>
+    <helpers:PieOverviewView Title="PieOverview" IconImageSource="pie.png"/>
+    <helpers:BasketView Title="Basket" IconImageSource="basket.png" />
+    <helpers:ContactusView Title="Contact Us" IconImageSource="contact.png" />-->
+
+</Shell>

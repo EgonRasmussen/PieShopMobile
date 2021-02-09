@@ -6,5 +6,12 @@
              mc:Ignorable="d"
              x:Class="BethanysPieShopMobile.LargeImagePageView">
     
-    <Image Source="applepie.jpg" />
+    <StackLayout>
+        <Image Source="applepie.jpg" />
+        <Button
+            x:Name="btnOK"
+            Clicked= "btnOK_Clicked"
+            Text="OK"/>
+    </StackLayout>
+    
 </ContentPage>
