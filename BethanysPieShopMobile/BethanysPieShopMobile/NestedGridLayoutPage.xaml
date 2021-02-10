@@ -4,16 +4,26 @@
              x:Class="BethanysPieShopMobile.NestedGridLayoutPage">
 
     <Grid RowDefinitions="100, 2*, *" ColumnDefinitions="*, *, *">
-        <Label Text="Welcome to Bethany's Pie Shop" Grid.ColumnSpan="3" HorizontalOptions="Center" VerticalOptions="Center"></Label>
-        <BoxView Color="Green"  Grid.Row="1" Grid.Column="0" />
-        <BoxView Color="Red"  Grid.Row="1" Grid.Column="1" />
-        <BoxView Color="Blue"  Grid.Row="1" Grid.Column="2" />
+        <Label Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" 
+               Text="Welcome to Bethany's Pie Shop"  
+               HorizontalOptions="Center" VerticalOptions="Center" />
+        <BoxView Grid.Row="1" Grid.Column="0" 
+                 Color="Green" />
+        <BoxView Grid.Row="1" Grid.Column="1"
+                 Color="Red" />
+        <BoxView Grid.Column="2"
+                 Color="Blue" Grid.Row="1" />
         <Grid Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" RowDefinitions="*, *" ColumnDefinitions="*, *" >
-            <BoxView Color="AntiqueWhite" Grid.Row="0" Grid.Column="0" />
-            <BoxView Color="Aqua" Grid.Row="0" Grid.Column="1" />
-            <BoxView Color="DarkOrange" Grid.Row="1" Grid.Column="0" />
-            <BoxView Color="LawnGreen" Grid.Row="1" Grid.Column="1" />
+            <BoxView Grid.Row="0" Grid.Column="0"
+                     Color="AntiqueWhite" />
+            <BoxView Grid.Row="0" Grid.Column="1"
+                     Color="Aqua"/>
+            <BoxView Grid.Row="1" Grid.Column="0"
+                     Color="DarkOrange"/>
+            <BoxView Grid.Row="1" Grid.Column="1"
+                     Color="LawnGreen" />
         </Grid>
-        <BoxView Color="Violet"  Grid.Row="2" Grid.Column="2" />
+        <BoxView Grid.Row="2" Grid.Column="2"
+                 Color="Violet"/>
     </Grid>
 </ContentPage>

@@ -9,15 +9,16 @@ namespace BethanysPieShopMobile
             InitializeComponent();
 
             MainPage = new StackLayoutPage();
-            //MainPage = new LoginWithStackLayout();
-
+            
             //MainPage = new GridLayoutPage();
             //MainPage = new NestedGridLayoutPage();
-            //MainPage = new LoginWithGridLayout();
 
-            //MainPage = new RelativeLayoutPage();
             //MainPage = new ScrollViewPage();
-            //MainPage = new FlexLayoutPage();     
+            //MainPage = new FlexLayoutPage(); 
+
+            //MainPage = new LoginWithStackLayout();
+            //MainPage = new LoginWithGridLayout();
+            //MainPage = new RelativeLayoutPage();
         }
 
         protected override void OnStart()

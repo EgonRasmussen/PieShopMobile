@@ -3,8 +3,6 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="BethanysPieShopMobile.GridLayoutPage">
 
-    <Grid RowDefinitions="100, 2*, *, Auto" ColumnDefinitions="*, *, *">    
-        
     <!--<Grid>-->
         <!--<Grid.RowDefinitions>
             <RowDefinition Height="100"></RowDefinition>
@@ -17,13 +15,24 @@
             <ColumnDefinition Width="*"></ColumnDefinition>
             <ColumnDefinition Width="*"></ColumnDefinition>
         </Grid.ColumnDefinitions>-->
-        <Label Text="Welcome to Bethany's Pie Shop" Grid.ColumnSpan="3" HorizontalOptions="Center" VerticalOptions="Center"></Label>
-        <BoxView Color="Green"  Grid.Row="1" Grid.Column="0" />
-        <BoxView Color="Red"  Grid.Row="1" Grid.Column="1" />
-        <BoxView Color="Blue"  Grid.Row="1" Grid.Column="2" />
-        <BoxView Color="Yellow"  Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" />
-        <BoxView Color="Violet"  Grid.Row="2" Grid.Column="2" />
-        <Button Text="I want some space too!" Grid.Row="3" Grid.ColumnSpan="3" HorizontalOptions="Center"></Button>
+
+    <Grid RowDefinitions="100, 2*, *, Auto" ColumnDefinitions="*, *, *">
+        <Label Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" 
+               Text="Welcome to Bethany's Pie Shop"  
+               HorizontalOptions="Center" VerticalOptions="Center" />
+        <BoxView Grid.Row="1" Grid.Column="0" 
+                 Color="Green" />
+        <BoxView Grid.Row="1" Grid.Column="1" 
+                 Color="Red" />
+        <BoxView Grid.Row="1" Grid.Column="2"
+                 Color="Blue" />
+        <BoxView Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2"
+                 Color="Yellow" />
+        <BoxView Grid.Row="2" Grid.Column="2"
+                 Color="Violet" />
+        <Button Grid.Row="3" Grid.ColumnSpan="3"
+                Text="I want some space too!"  
+                HorizontalOptions="Center" />
     </Grid> 
     
 </ContentPage>
