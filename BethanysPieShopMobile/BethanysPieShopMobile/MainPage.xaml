@@ -3,40 +3,18 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             xmlns:model="clr-namespace:BethanysPieShopMobile.Model"
              mc:Ignorable="d"
              x:Class="BethanysPieShopMobile.MainPage">
 
-    <!--#2 Instantiate a Pie Object in XAML-->
-    <!--<ContentPage.Resources>
-        <ResourceDictionary>
-            <model:Pie PieName="Apple pie" Id="1" Price="20" x:Key="ApplePie"></model:Pie>
-        </ResourceDictionary>
-    </ContentPage.Resources>-->
-
-    <Grid x:Name="MainGrid" RowDefinitions="50,50,50,50" ColumnDefinitions="200,*" Margin="20, 50, 20, 10">
-
-        <!--#1 Binding in code-->
-        <Label Grid.Row="0" Grid.Column="0" Text="Pie name" />
-        <Entry Grid.Row="0" Grid.Column="1" x:Name="NameEntry" />
-        <Label Grid.Row="1" Grid.Column="0" Text="Price" />
-        <Entry Grid.Row="1" Grid.Column="1" x:Name="PriceEntry" />
-        <Button Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" Text="Add pie" />
-
-        <!--#2 Binding in XAML-->
-        <!--<Label Grid.Row="0" Grid.Column="0" Text="Pie name" />
-        <Entry Grid.Row="0" Grid.Column="1" Text="{Binding PieName, Source={StaticResource ApplePie}}" />
-        <Label Grid.Row="1" Grid.Column="0" Text="Price"></Label>
-        <Entry Grid.Row="1" Grid.Column="1" Text="{Binding Price, Source={StaticResource ApplePie}}" />
-        <Button Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" Text="Add pie" />-->
-
-        <!--#3 og #4 Binding in XAML via BindingContext på MainGrid-->
-        <!--<Label Grid.Row="0" Grid.Column="0" Text="Pie name" />
-        <Entry Grid.Row="0" Grid.Column="1" Text="{Binding PieName}" />
-        <Label Grid.Row="1" Grid.Column="0" Text="Price" />
-        <Entry Grid.Row="1" Grid.Column="1" Text="{Binding Price}" />
-        <Button Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" Text="Add pie" />-->
-    </Grid>
-
+    <StackLayout>
+        <Label Text="{Binding Id, StringFormat='ID: {0}'}" FontSize="Large"/>
+        
+        <Grid x:Name="MainGrid" RowDefinitions="50,50,*" ColumnDefinitions="200,*" Margin="20, 50, 20, 10">
+            <Label Grid.Row="0" Grid.Column="0" Text="Pie name" VerticalTextAlignment="Center" />
+            <Entry Grid.Row="0" Grid.Column="1" Text="{Binding PieName}" />
+            <Label Grid.Row="1" Grid.Column="0" Text="Price" VerticalTextAlignment="Center" />
+            <Entry Grid.Row="1" Grid.Column="1" Text="{Binding Price}" />
+        </Grid>
+    </StackLayout>
 
 </ContentPage>

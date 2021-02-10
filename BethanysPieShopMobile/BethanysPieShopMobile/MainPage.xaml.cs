@@ -19,25 +19,9 @@ namespace BethanysPieShopMobile
                 Price = 20
             };
 
-            #region #1 BINDING IN CODE
-            Binding pieNameBinding = new Binding();
-            pieNameBinding.Source = pie;
-            pieNameBinding.Path = "PieName";
-            NameEntry.SetBinding(Entry.TextProperty, pieNameBinding);
+            MainGrid.BindingContext = pie;
 
-            Binding priceBinding = new Binding();
-            priceBinding.Source = pie;
-            priceBinding.Path = "Price";
-            PriceEntry.SetBinding(Entry.TextProperty, priceBinding);
-            #endregion
-
-            #region #3 BINDING VIA BINDINGCONTEXT
-            //MainGrid.BindingContext = pie;
-            #endregion
-
-            #region #4 BINDING THE WHOLE PAGE
             //this.BindingContext = pie;
-            #endregion
         }
     }
 }
