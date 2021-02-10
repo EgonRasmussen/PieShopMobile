@@ -6,34 +6,28 @@
              mc:Ignorable="d"
              x:Class="BethanysPieShopMobile.ViewBindingPage">
 
-    <Grid Margin="20, 50, 20, 10" x:Name="MainGrid">
-        <Grid.RowDefinitions>
-            <RowDefinition Height="50"></RowDefinition>
-            <RowDefinition Height="50"></RowDefinition>
-            <RowDefinition Height="50"></RowDefinition>
-            <RowDefinition Height="50"></RowDefinition>
-            <RowDefinition Height="50"></RowDefinition>
-        </Grid.RowDefinitions>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="200"></ColumnDefinition>
-            <ColumnDefinition Width="*"></ColumnDefinition>
-        </Grid.ColumnDefinitions>
-        <Label Grid.Row="0" Grid.Column="0" 
-            Text="Pie name"/>
-        <Entry Grid.Row="0" Grid.Column="1" 
-            Text="{Binding PieName}"/>
-        <Label Grid.Row="1" Grid.Column="0" 
-            Text="Price"/>
+    <StackLayout BindingContext="{x:Reference Name=PriceSlider}"
+                Padding="20"
+                Spacing="20">
 
-        <Label Grid.Row="1" Grid.Column="1"  
-            Text="{Binding Value}"            
-            BindingContext="{x:Reference Name=PriceSlider}"/>
+        <Slider x:Name="PriceSlider" 
+        MinimumTrackColor="Green"
+        MaximumTrackColor="Red"            
+        Minimum="0" 
+        Maximum="100" />
 
-        <Slider Grid.Row="2" 
-            x:Name="PriceSlider" 
-            Grid.ColumnSpan="2" 
-            Minimum="0" 
-            Maximum="30" />
-        <Button Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" Text="Add pie"></Button>
-    </Grid>
+        <Label Text="{Binding Source={x:Reference Name=PriceSlider}, Path=Value}" />
+
+        <Label Text="{Binding Path=Value}" />
+
+        <Entry Text="{Binding Value}" />
+
+        <!--<Label Text="{Binding Value, StringFormat='Rotation angle = {0:N}'}" 
+               Rotation="{Binding Value}" 
+               HorizontalOptions="Center"
+               VerticalOptions="CenterAndExpand"
+               FontSize="Large" />-->
+
+    </StackLayout>
+
 </ContentPage>
