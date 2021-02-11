@@ -106,8 +106,7 @@ namespace BethanysPieShopMobile
                 }
             };
 
-            //PiesListView.ItemsSource = Pies;
-            this.BindingContext = this;
+            PiesListView.ItemsSource = Pies;
         }
 
         private void AddPieButton_Clicked(object sender, EventArgs e)
