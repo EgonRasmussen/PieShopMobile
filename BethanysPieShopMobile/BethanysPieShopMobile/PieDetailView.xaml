@@ -1,12 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:models="clr-namespace:BethanysPieShopMobile.Model"
              x:Class="BethanysPieShopMobile.PieDetailView"
+             x:DataType="models:Pie"
              Padding="5"
              BackgroundImage="patternwide.png"
              Shell.TabBarIsVisible="false">
-    
-    <Grid RowDefinitions="50,150,50,200,50" ColumnDefinitions="2*,3*">
+
+    <Grid RowDefinitions="50,150,50,200,50" ColumnDefinitions="2*,3*" >
 
         <Label Text="{Binding PieName}"
                Grid.Row="0" 
