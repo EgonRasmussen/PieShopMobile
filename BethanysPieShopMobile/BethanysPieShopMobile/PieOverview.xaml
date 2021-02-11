@@ -12,22 +12,7 @@
                   CachingStrategy="RecycleElement" 
                   ItemSelected="PiesListView_OnItemSelected" 
                   IsPullToRefreshEnabled="True" >
-<!--TextCell-->
-            <!--<ListView.ItemTemplate>
-                <DataTemplate>
-                    <TextCell Text="{Binding PieName}" Detail="{Binding Price}" />
-                </DataTemplate>
-            </ListView.ItemTemplate>-->
 
-<!--ImageCell-->
-            <!--<ListView.ItemTemplate>
-                <DataTemplate>
-                    <ImageCell Text="{Binding PieName}" Detail="{Binding Price}" ImageSource="{Binding ImageUrl}"
-                               TextColor="#22cfa7"></ImageCell>
-                </DataTemplate>
-            </ListView.ItemTemplate>-->
-
- CustomCell
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
