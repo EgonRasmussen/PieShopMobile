@@ -10,7 +10,7 @@ namespace BethanysPieShopMobile
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class PieOverview : ContentPage
     {
-        public ObservableCollection<Pie> Pies { get; set; }
+        public ObservableCollection<Pie> Pies { get; set; } 
 
         public PieOverview()
         {
