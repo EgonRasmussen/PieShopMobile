@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace BethanysPieShopMobile.Model
+﻿namespace BethanysPieShopMobile.Model
 {
     public class Pie
     {

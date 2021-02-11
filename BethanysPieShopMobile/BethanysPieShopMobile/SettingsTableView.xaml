@@ -2,7 +2,7 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="BethanysPieShopMobile.SettingsTableView">
-    <ContentPage.Content>
+
         <TableView Intent="Form">
             <TableRoot>
                 <TableSection Title="App settings">
@@ -11,13 +11,9 @@
                 </TableSection>
             </TableRoot>
         </TableView>
-    </ContentPage.Content>
-</ContentPage>
 
 
-
-<!--<ContentPage.Content>
-    <TableView Intent="Form">
+    <!--<TableView Intent="Form">
         <TableRoot>
             <TableSection Title="App settings">
                 <ViewCell>
@@ -40,5 +36,6 @@
                 <SwitchCell Text="Enable orders in the app" />
             </TableSection>
         </TableRoot>
-    </TableView>
-</ContentPage.Content>-->
+    </TableView>-->
+
+</ContentPage>

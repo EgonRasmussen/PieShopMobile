@@ -3,22 +3,8 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="BethanysPieShopMobile.SettingsView"
              BackgroundImage="patternwide.png">
-    <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="100"></RowDefinition>
-            <RowDefinition Height="50"></RowDefinition>
-            <RowDefinition Height="50"></RowDefinition>
-            <RowDefinition Height="50"></RowDefinition>
-            <RowDefinition Height="50"></RowDefinition>
-            <RowDefinition Height="50"></RowDefinition>
-            <RowDefinition Height="50"></RowDefinition>
-            <RowDefinition Height="50"></RowDefinition>
-            <RowDefinition Height="50"></RowDefinition>
-        </Grid.RowDefinitions>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width=".4*"></ColumnDefinition>
-            <ColumnDefinition Width=".6*"></ColumnDefinition>
-        </Grid.ColumnDefinitions>
+    <Grid RowDefinitions="100,50,50,50,50,50,50,50,50" ColumnDefinitions="4*,6*">
+        
         <Label Text="Settings" 
                Grid.Row="0" 
                Grid.Column="0" 

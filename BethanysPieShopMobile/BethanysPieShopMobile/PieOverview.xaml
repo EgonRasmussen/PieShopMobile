@@ -5,7 +5,8 @@
     
     <Grid RowDefinitions="*, 50">
 
-        <ListView VerticalOptions="FillAndExpand" 
+        <ListView ItemsSource="{Binding Pies}"
+                  VerticalOptions="FillAndExpand" 
                   x:Name="PiesListView" 
                   CachingStrategy="RecycleElement" 
                   ItemSelected="PiesListView_OnItemSelected" 
@@ -26,7 +27,7 @@
             </ListView.ItemTemplate>-->
 
  <!--CustomCell-->
-            <!--<ListView.ItemTemplate>
+            <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
                         <Grid RowDefinitions="*,Auto" ColumnDefinitions="50,*,50" Margin="5" BackgroundColor="White" RowSpacing="2">
@@ -36,9 +37,10 @@
                         </Grid>
                     </ViewCell>
                 </DataTemplate>
-            </ListView.ItemTemplate>-->
+            </ListView.ItemTemplate>
 
         </ListView>
+        
         <Button x:Name="AddPieButton"
                 Clicked="AddPieButton_Clicked"
                 Text="Add Pie"

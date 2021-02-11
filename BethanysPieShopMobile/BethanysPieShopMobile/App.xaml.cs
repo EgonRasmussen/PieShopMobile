@@ -13,13 +13,11 @@ namespace BethanysPieShopMobile
 
             MainPage = new NavigationPage(new PieOverview());
 
-            //MainPage = new SettingsTableView();
+            //MainPage = new NavigationPage(new SettingsView());
 
-            //var alreadyRegistered = false;
-            //if (alreadyRegistered)
-            //    MainPage = new MainView();
-            //else
-            //    MainPage = new NavigationPage(new LoginView());
+            //MainPage = new CarouselViewPage();
+
+            //MainPage = new SettingsTableView();
         }
 
         protected override void OnStart()
