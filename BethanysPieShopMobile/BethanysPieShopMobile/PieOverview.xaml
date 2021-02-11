@@ -38,13 +38,13 @@
     </Grid>
 </ContentPage>
     
-<!--Forskellige eksempler på Binding Properties i DataTemplaten:-->   
+<!--Forskellige eksempler på Binding Properties, som efter tur indsættes i DataTemplaten:-->   
     <!--Text="{Binding Price}"-->
-    <!--Text="{Binding Price, StringFormat='{0:c}'}"-->
+    <!--Text="{Binding Price, StringFormat='{0:C}'}"-->
     <!--Text="{Binding PremiumPrice, FallbackValue='???'}"-->
     <!--<Image Grid.Column="0" Source="{Binding ImageUrl, TargetNullValue='https://gillcleerenpluralsight.blob.core.windows.net/files/default-pie.png' }" HeightRequest="100" WidthRequest="100" Margin="2,2,1,2" />-->
 
 <!--Forskellige eksempler på ValueConverters i DataTemplaten-->
-<!--Text="{Binding Price, Converter={StaticResource LocalCurrencyConverter}}"-->   
-<!--TextColor="{Binding Price, Converter={StaticResource LocalDoubleToColorConverter}, ConverterParameter=16.0}"-->
-<!--Text="{Binding Price, Converter={converters:DoNothingConverter}}"-->
+    <!--Text="{Binding Price, Converter={StaticResource LocalCurrencyConverter}}"-->   
+    <!--TextColor="{Binding Price, Converter={StaticResource LocalDoubleToColorConverter}, ConverterParameter=16.0}"-->
+    <!--Text="{Binding Price, Converter={converters:DoNothingConverter}}"-->
