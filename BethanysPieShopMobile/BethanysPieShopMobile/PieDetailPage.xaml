@@ -15,7 +15,7 @@
                Grid.Row="0" 
                Grid.Column="0" 
                Grid.ColumnSpan="2" 
-               Style="{StaticResource TitleLabelStyle}"></Label>
+               Style="{StaticResource TitleLabelStyle}" />
             <Image x:Name="PieImage" 
                Grid.Column="0"
                Grid.Row="1" 
@@ -25,52 +25,52 @@
                WidthRequest="200" 
                HeightRequest="200" 
                HorizontalOptions="Center" 
-               VerticalOptions="Center"></Image>
+               VerticalOptions="Center" />
             <Label Text="Pie name" 
                Grid.Row="2" 
                Grid.Column="0"
-               Style="{StaticResource SmallLabelStyle}"></Label>
+               Style="{StaticResource SmallLabelStyle}" />
             <Entry Grid.Row="2"
                Grid.Column="1"
                Text="{Binding PieName, Mode=TwoWay}" 
-               Style="{StaticResource RegularEntry}"></Entry>
+               Style="{StaticResource RegularEntry}" />
             <Label Text="Price" 
                Grid.Row="3" 
                Grid.Column="0"
-               Style="{StaticResource SmallLabelStyle}"></Label>
+               Style="{StaticResource SmallLabelStyle}" />
             <Entry Grid.Row="3"
                Grid.Column="1"
                Text="{Binding Price, Mode=TwoWay}" 
-               Style="{StaticResource RegularEntry}"></Entry>
+               Style="{StaticResource RegularEntry}" />
             <Label Text="Description" 
                Grid.Row="4" 
                Grid.Column="0"
-               Style="{StaticResource SmallLabelStyle}"></Label>
+               Style="{StaticResource SmallLabelStyle}" />
             <Editor Grid.Row="4"
                Grid.Column="1"
                Text="{Binding Description, Mode=TwoWay}" 
-               Style="{StaticResource RegularEditorStyle}"></Editor>
+               Style="{StaticResource RegularEditorStyle}" />
             <Label Text="In stock?" 
                Grid.Row="5" 
                Grid.Column="0"
-               Style="{StaticResource SmallLabelStyle}"></Label>
+               Style="{StaticResource SmallLabelStyle}" />
             <Switch Grid.Row="5"
                Grid.Column="1"
-               IsToggled="{Binding InStock, Mode=TwoWay}"></Switch>
+               IsToggled="{Binding InStock, Mode=TwoWay}" />
             <Label Text="Available date" 
                Grid.Row="6" 
                Grid.Column="0"
-               Style="{StaticResource SmallLabelStyle}"></Label>
+               Style="{StaticResource SmallLabelStyle}" />
             <DatePicker Grid.Row="6"
                 Grid.Column="1"
-                Date="{Binding AvailableFromDate, Mode=TwoWay}"></DatePicker>
+                Date="{Binding AvailableFromDate, Mode=TwoWay}" />
             <Button x:Name="SavePieButton" 
                 Clicked="SavePieButton_OnClicked" 
                 Text="Save Pie" 
                 Style="{StaticResource RegularButtonStyle}" 
                 Grid.Row="7" 
                 Grid.Column="0"
-                Grid.ColumnSpan="2"></Button>
+                Grid.ColumnSpan="2" />
         </Grid>
     </ScrollView>
 
