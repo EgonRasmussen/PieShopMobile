@@ -1,7 +1,4 @@
-﻿using System;
-using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
-
+﻿using Xamarin.Forms;
 
 namespace BethanysPieShopMobile
 {
@@ -11,12 +8,11 @@ namespace BethanysPieShopMobile
         {
             InitializeComponent();
 
-            //MainPage = new PieOverview();
+            //MainPage = new AppShell();
 
-            var alreadyRegistered = false;
-
+            var alreadyRegistered = true;
             if (alreadyRegistered)
-                MainPage = new MainView();
+                MainPage = new AppShell();
             else
                 MainPage = new NavigationPage(new LoginView());
         }
