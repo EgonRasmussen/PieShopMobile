@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Shell xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="BethanysPieShopMobile.AppShell"
+             xmlns:pages="clr-namespace:BethanysPieShopMobile">
+
+    <FlyoutItem FlyoutDisplayOptions="AsMultipleItems">
+        <ShellContent Title="PieOverview" Icon="pie.png" ContentTemplate="{DataTemplate pages:PieOverview}" />
+        <ShellContent Title="Visit Us" Icon="visitus" ContentTemplate="{DataTemplate pages:WebPageView}" />
+        <ShellContent Title="Contact Us" Icon="contactus.png" ContentTemplate="{DataTemplate pages:ContactView}" />
+        <ShellContent Title="Registrer" Icon="signup.png" ContentTemplate="{DataTemplate pages:RegisterView}"  />
+        <ShellContent Title="Settings" Icon="settings.png" ContentTemplate="{DataTemplate pages:SettingsTableView}" />
+    </FlyoutItem>
+</Shell>

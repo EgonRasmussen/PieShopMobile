@@ -17,10 +17,10 @@ namespace BethanysPieShopMobile
 			InitializeComponent ();
 		}
 
-        private async void LoginButton_OnClicked(object sender, EventArgs e)
-        {
-            Navigation.InsertPageBefore(new MainView(), this);
-            await Navigation.PopAsync();
-        }
-    }
+		private void LoginButton_OnClicked(object sender, EventArgs e)
+		{
+			// Logik til authentication indsættes her
+			Application.Current.MainPage = new AppShell();
+		}
+	}
 }
