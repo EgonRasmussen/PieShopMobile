@@ -13,7 +13,7 @@
         <Entry Grid.Row="0" Grid.Column="1" Text="{Binding PieName, Mode=TwoWay}" />
 
         <Label Grid.Row="1" Grid.Column="0" Text="Price"></Label>
-        <Entry Grid.Row="1" Grid.Column="1" Text="{Binding Price, Mode=TwoWay}" />
+        <Entry Grid.Row="1" Grid.Column="1" Text="{Binding Price, Mode=OneWay}" />
 
         <Button Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" Text="Increment Price" Clicked="btnIncreasePrice_Clicked" />
     </Grid>

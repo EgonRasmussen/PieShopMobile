@@ -34,7 +34,7 @@ namespace BethanysPieShopMobile.Model
     //        set
     //        {
     //            _pieName = value;
-    //            RaisePropertyChanged();
+    //           RaisePropertyChanged();
     //        }
     //    }
 
