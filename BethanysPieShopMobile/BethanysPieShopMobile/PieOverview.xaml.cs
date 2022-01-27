@@ -174,7 +174,10 @@ namespace BethanysPieShopMobile
                     InStock = true,
                 }
             };
-            PiesListView.ItemsSource = pies;
+            
+            IReadOnlyCollection<Pie> readOnlyPies = new ReadOnlyCollection<Pie>(pies);
+            
+            PiesListView.ItemsSource = readOnlyPies;
         }
     }
 }
