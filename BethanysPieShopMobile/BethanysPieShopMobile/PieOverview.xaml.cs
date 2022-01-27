@@ -111,7 +111,7 @@ namespace BethanysPieShopMobile
 
         private void AddPieButton_Clicked(object sender, EventArgs e)
         {
-            var newPie = new Pie
+            Pie newPie = new Pie
             {
                 PieName = "Pumpkin Pie",
                 Price = 12.95,
@@ -125,13 +125,13 @@ namespace BethanysPieShopMobile
 
         private async void PiesListView_OnItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
-            var selectedPie = e.SelectedItem as Pie;
+            Pie selectedPie = e.SelectedItem as Pie;
             await Navigation.PushAsync(new PieDetailView(selectedPie));
         }
 
         private void ReloadData()
         {
-            var pies = new List<Pie>
+            List<Pie> pies = new List<Pie>
             {
                 new Pie
                 {

@@ -22,13 +22,13 @@ namespace BethanysPieShopMobile
 
         private void LoadData()
         {
-            var langaugeList = new List<string> { "English", "Dutch", "French", "German" };
-            LanguagePickerFromCode.ItemsSource = langaugeList;
+            List<string> languageList = new List<string> { "English", "Dutch", "French", "German" };
+            LanguagePickerFromCode.ItemsSource = languageList;
         }
 
         private void LanguagePickerFromCode_OnSelectedIndexChanged(object sender, EventArgs e)
         {
-            var selectedIndex = ((Picker)sender).SelectedIndex;
+            int selectedIndex = ((Picker)sender).SelectedIndex;
 
             if (selectedIndex != -1)
             {
